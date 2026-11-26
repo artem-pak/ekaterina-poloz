@@ -37,10 +37,11 @@
   .notch-btn svg{width:30px;height:30px;display:block}
   body{padding-bottom:110px}
   .hero .wrap{max-width:960px}
-  .hero-head,.hero-body{container-type:inline-size}
-  .hero-body{display:flex;flex-direction:column}
-  /* на телефоне блок с фактами стоит над кнопкой, на компьютере под ней */
-  .lead{order:1} .facts{order:2} .cta{order:3} .intro{order:4}
+  .hero-head,.cta{container-type:inline-size}
+  .hero .wrap{display:flex;flex-direction:column}
+  .hero-left{display:contents}
+  /* порядок на телефоне: заголовок, подзаголовок, факты над кнопкой, кнопка, фото */
+  .hero-head{order:1} .lead{order:2} .facts{order:3} .cta{order:4} .hero-photo{order:5} .stat-cards{display:none}
 
   .kicker{font-size:clamp(16px,1.5vw,19px);color:var(--muted)}
   /* заголовок и кнопка всегда в одну строку: размер считается от ширины колонки */
@@ -55,32 +56,41 @@
   .fact span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .fact b{display:block;margin-top:6px;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 
-  /* Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне её головы.
-     Белый фон фото «растворяется» на белой странице (multiply), свечение остаётся. */
+  /* ТЕЛЕФОН: Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне её головы.
+     Белый фон фото растворяется на белой странице (multiply), свечение остаётся. */
   .hero-photo{position:relative;margin-top:14px;display:flex;justify-content:flex-end;overflow:hidden}
   .hero-photo img{display:block;flex:none;width:100%;max-width:none;height:auto;margin-right:-23%;mix-blend-mode:multiply}
-  /* верх макушки на фото: ~12% высоты; цифры стартуют там же и не выше */
   .hero-stats{position:absolute;left:0;top:12%;z-index:2;display:flex;flex-direction:column;gap:10px;width:40%}
   .hero-stats b{display:block;font-size:clamp(24px,7.6vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
   .hero-stats p{margin-top:4px;font-size:11.5px;line-height:1.25;color:var(--ink)}
   .hero-stats span{display:block;margin-top:2px;font-size:10.5px;line-height:1.25;color:#3e4655}
 
   @media (min-width:960px){
-    .hero{--notch-w:160px;--notch-h:22px;padding:52px 0 0}
+    .hero{--notch-w:160px;--notch-h:22px;padding:44px 0 64px}
     .notch-btn{width:64px;height:64px;top:-6px}
     .notch-btn svg{width:32px;height:32px}
-    .hero .wrap{max-width:1200px;display:grid;grid-template-columns:minmax(0,44%) minmax(0,1fr);grid-template-rows:auto 1fr;column-gap:40px}
-    .hero-head{grid-column:1 / -1;grid-row:1}
-    .hero-body{grid-column:1;grid-row:2;align-self:start;padding-top:4px;padding-bottom:56px}
-    .btn{padding:24px 10px}
-    .facts{order:5;margin-top:34px;grid-template-columns:repeat(2,auto);justify-content:space-between;gap:22px 16px}
-    .hero-photo{grid-column:2;grid-row:2;align-self:end;margin:0;overflow:visible;container-type:inline-size}
-    .hero-photo img{width:min(600px,100%);margin-right:0}
-    /* размер и ширина цифр зависят от ширины колонки с фото, чтобы не заходить на лицо */
-    .hero-stats{left:-22px;top:12%;gap:clamp(18px,5cqi,30px);width:calc(32cqi + 14px)}
-    .hero-stats b{font-size:min(48px,7.8cqi)}
-    .hero-stats p{margin-top:8px;font-size:clamp(13px,2.6cqi,16px)}
-    .hero-stats span{font-size:clamp(11.5px,2.3cqi,14px)}
+
+    /* КОМПЬЮТЕР: слева текст и кнопка, справа фото; ниже ряд с фактами и две карточки */
+    .hero .wrap{max-width:1160px;display:grid;grid-template-columns:minmax(0,1fr) 440px;column-gap:56px;align-items:start}
+    .hero-left{display:block;grid-column:1;grid-row:1}
+    .hero-head,.lead,.facts,.cta,.hero-photo{order:0}
+    .cta-in{width:fit-content;max-width:100%}
+    .btn{display:block;width:auto;font-size:18px;padding:24px 44px}
+    .intro{width:0;min-width:100%;margin-top:16px}
+
+    .hero-photo{grid-column:2;grid-row:1;margin:0;overflow:hidden;aspect-ratio:4/5;border:1px solid #c9d2dc;border-radius:6px;background:#fff;align-self:start}
+    /* макушка Кати на уровне надписи и заголовка слева */
+    .hero-photo img{position:absolute;left:50%;bottom:0;width:108%;margin:0;transform:translateX(-50%)}
+    .hero-stats{display:none}
+
+    .facts{grid-column:1 / -1;grid-row:2;margin-top:36px;display:flex;gap:64px;flex-wrap:wrap}
+
+    .stat-cards{grid-column:1 / -1;grid-row:3;display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:22px}
+    .stat-card{position:relative;border:1px solid #c9d2dc;border-radius:6px;background:#fff;padding:28px 28px 26px}
+    .stat-card b{display:block;font-size:56px;line-height:1;font-weight:400;letter-spacing:-.045em;color:var(--ink)}
+    .stat-card p{margin-top:26px;font-size:18px;line-height:1.3;color:var(--ink)}
+    .stat-card span{display:block;margin-top:2px;font-size:18px;line-height:1.3;color:var(--muted)}
+    .stat-card svg{position:absolute;right:24px;top:26px;width:26px;height:26px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:square}
   }
 </style>
 </head>
@@ -88,21 +98,23 @@
 <div class="hero-shell">
 <header class="hero">
   <div class="wrap">
-    <div class="hero-head">
-      <p class="kicker">Авторское сопровождение Кати&nbsp;Полоз</p>
-      <h1><span class="grad-text">AI</span> бизнес&#8209;ассистент</h1>
+    <div class="hero-left">
+      <div class="hero-head">
+        <p class="kicker">Авторское сопровождение Кати&nbsp;Полоз</p>
+        <h1><span class="grad-text">AI</span> бизнес&#8209;ассистент</h1>
+      </div>
+      <p class="lead">Освой профессию с&nbsp;нуля за&nbsp;6&nbsp;недель&nbsp;— с&nbsp;потенциалом дохода от&nbsp;150&nbsp;000&nbsp;₽ в&nbsp;месяц из&nbsp;дома</p>
+      <div class="cta"><div class="cta-in">
+        <a class="btn" href="#consult">Записаться на&nbsp;карьерную консультацию</a>
+        <p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p>
+      </div></div>
     </div>
 
-    <div class="hero-body">
-      <p class="lead">Освой профессию с&nbsp;нуля за&nbsp;6&nbsp;недель&nbsp;— с&nbsp;потенциалом дохода от&nbsp;150&nbsp;000&nbsp;₽ в&nbsp;месяц из&nbsp;дома</p>
-      <div class="facts">
-        <div class="fact"><span>Формат</span><b>Онлайн</b></div>
-        <div class="fact"><span>Продолжительность</span><b>6&nbsp;недель</b></div>
-        <div class="fact"><span>Старт потока</span><b>17&nbsp;января</b></div>
-        <div class="fact"><span>Сопровождение</span><b>лично от&nbsp;Кати</b></div>
-      </div>
-      <div class="cta"><a class="btn" href="#consult">Записаться на&nbsp;карьерную консультацию</a></div>
-      <p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p>
+    <div class="facts">
+      <div class="fact"><span>Формат</span><b>Онлайн</b></div>
+      <div class="fact"><span>Продолжительность</span><b>6&nbsp;недель</b></div>
+      <div class="fact"><span>Старт потока</span><b>17&nbsp;января</b></div>
+      <div class="fact"><span>Сопровождение</span><b>лично от&nbsp;Кати</b></div>
     </div>
 
     <div class="hero-photo">
@@ -111,6 +123,11 @@
         <div><b>6&nbsp;лет</b><p>мой опыт бизнес&#8209;ассистента</p><span>на&nbsp;удалёнке, в&nbsp;офисе не&nbsp;больше месяца</span></div>
       </div>
       <img src="katya.jpg?v=2" width="1122" height="1402" alt="Катя Полоз">
+    </div>
+
+    <div class="stat-cards">
+      <div class="stat-card"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 21 21 5M8 5h13v13"/></svg><b>от&nbsp;150к&nbsp;₽</b><p>ориентир дохода ассистента</p><span>с&nbsp;двумя проектами или в&nbsp;координаторах</span></div>
+      <div class="stat-card"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 21 21 5M8 5h13v13"/></svg><b>6&nbsp;лет</b><p>мой опыт бизнес&#8209;ассистента</p><span>на&nbsp;удалёнке, в&nbsp;офисе не&nbsp;больше месяца</span></div>
     </div>
   </div>
 </header>
