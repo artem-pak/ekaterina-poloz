@@ -23,7 +23,19 @@
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
   /* ---------- первый экран (светлый, минимализм) ---------- */
-  .hero{background:#fff;border-radius:0 0 32px 32px;padding:32px 0 40px}
+  .hero-shell{position:relative;z-index:1;filter:drop-shadow(0 10px 14px rgba(20,50,90,.12))}
+  .hero{--notch-w:140px;--notch-h:20px;background:#fff;border-radius:0 0 32px 32px;padding:32px 0 0;overflow:hidden;
+    -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22 C36 22 46 0 80 0 C114 0 124 22 160 22 Z'/%3E%3C/svg%3E") center calc(100% + 1px) / var(--notch-w) var(--notch-h) no-repeat,linear-gradient(#000,#000);
+    -webkit-mask-composite:xor;
+    mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 160 22' preserveAspectRatio='none'%3E%3Cpath d='M0 22 C36 22 46 0 80 0 C114 0 124 22 160 22 Z'/%3E%3C/svg%3E") center calc(100% + 1px) / var(--notch-w) var(--notch-h) no-repeat,linear-gradient(#000,#000);
+    mask-composite:exclude}
+  /* кнопка со стрелками под вырезом */
+  .hero-notch{position:relative;z-index:5;height:0}
+  .notch-btn{position:absolute;left:50%;top:-5px;transform:translateX(-50%);width:56px;height:56px;border-radius:50%;
+    background:var(--grad);color:#fff;display:grid;place-items:center;transition:transform .2s ease}
+  .notch-btn:hover{transform:translateX(-50%) translateY(2px)}
+  .notch-btn svg{width:30px;height:30px;display:block}
+  body{padding-bottom:110px}
   .hero .wrap{max-width:960px}
   .hero-text{container-type:inline-size}
 
@@ -41,35 +53,31 @@
 
   .intro{margin:18px auto 0;max-width:560px;text-align:center;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:var(--muted);text-wrap:balance}
 
-  /* фото Кати: вырезанное фото в светлой голубой рамке */
-  .hero-photo{margin-top:32px}
-  .photo-frame{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;border:1px solid #c9d2dc;
-    background:linear-gradient(160deg,#e4eeff 0%,#dcf3fb 55%,#d8f7f1 100%)}
-  .photo-frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100%;height:auto;display:block}
-
-  /* карточки с цифрами: тонкая рамка, лёгкая крупная цифра, стрелка; всегда две в одну строку */
-  .stats{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-  .stat{position:relative;border:1px solid #c9d2dc;border-radius:6px;background:#fff;padding:16px 14px 16px}
-  .stat b{display:block;white-space:nowrap;font-size:min(56px,calc(((100cqi - 12px) / 2 - 28px) / 5.6));line-height:1;font-weight:400;letter-spacing:-.045em;color:var(--ink)}
-  .stat p{margin-top:18px;font-size:13px;line-height:1.3;color:var(--ink)}
-  .stat span{display:block;margin-top:2px;font-size:13px;line-height:1.3;color:var(--muted)}
-  .stat svg{position:absolute;right:12px;top:14px;width:16px;height:16px;stroke:var(--ink);fill:none;stroke-width:2.2;stroke-linecap:square}
+  /* Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне головы */
+  .hero-photo{position:relative;margin-top:20px;padding-top:44px;display:flex;justify-content:flex-end;overflow:hidden}
+  .hero-photo img{display:block;flex:none;width:100%;max-width:none;height:auto;margin-right:-19%}
+  .hero-stats{position:absolute;left:0;top:0;z-index:2;display:flex;flex-direction:column;gap:12px;width:42%}
+  .hero-stats b{display:block;font-size:clamp(26px,8.2vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
+  .hero-stats p{margin-top:5px;font-size:12px;line-height:1.28;color:var(--ink)}
+  .hero-stats span{display:block;margin-top:2px;font-size:11px;line-height:1.28;color:var(--muted)}
 
   @media (min-width:760px){
-    .hero{padding:52px 0 56px}
+    .hero{--notch-w:160px;--notch-h:22px;padding:52px 0 0}
+    .notch-btn{width:64px;height:64px;top:-6px}
+    .notch-btn svg{width:32px;height:32px}
     .btn{padding:24px 10px}
     .facts{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
-    .photo-frame{aspect-ratio:16/9}
-    .photo-frame img{width:auto;height:100%}
-    .stat{padding:28px 28px 26px}
-    .stat b{font-size:min(56px,calc(((100cqi - 12px) / 2 - 56px) / 5.6))}
-    .stat p{margin-top:26px;font-size:17px}
-    .stat span{font-size:17px}
-    .stat svg{right:24px;top:26px;width:26px;height:26px}
+    .hero-photo{margin-top:40px;padding-top:0}
+    .hero-photo img{width:min(560px,62%);margin-right:12%}
+    .hero-stats{top:10%;gap:30px;width:34%}
+    .hero-stats b{font-size:clamp(40px,4.6vw,56px)}
+    .hero-stats p{margin-top:8px;font-size:17px}
+    .hero-stats span{font-size:15px}
   }
 </style>
 </head>
 <body>
+<div class="hero-shell">
 <header class="hero">
   <div class="wrap">
     <div class="hero-text">
@@ -86,16 +94,23 @@
         <div class="fact"><span>Сопровождение</span><b>лично от&nbsp;Кати</b></div>
       </div>
 
-      <div class="hero-photo">
-        <div class="photo-frame"><img src="katya.webp" width="1178" height="1335" alt="Катя Полоз"></div>
-      </div>
+    </div>
 
-      <div class="stats">
-        <div class="stat"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 21 21 5M8 5h13v13"/></svg><b>от&nbsp;150к&nbsp;₽</b><p>ориентир дохода ассистента</p><span>с&nbsp;двумя проектами или в&nbsp;координаторах</span></div>
-        <div class="stat"><svg viewBox="0 0 26 26" aria-hidden="true"><path d="M5 21 21 5M8 5h13v13"/></svg><b>6&nbsp;лет</b><p>мой опыт бизнес&#8209;ассистента</p><span>на&nbsp;удалёнке, в&nbsp;офисе не&nbsp;больше месяца</span></div>
+    <div class="hero-photo">
+      <div class="hero-stats">
+        <div><b>от&nbsp;150к&nbsp;₽</b><p>ориентир дохода ассистента</p><span>с&nbsp;двумя проектами или в&nbsp;координаторах</span></div>
+        <div><b>6&nbsp;лет</b><p>мой опыт бизнес&#8209;ассистента</p><span>на&nbsp;удалёнке, в&nbsp;офисе не&nbsp;больше месяца</span></div>
       </div>
+      <img src="katya.webp" width="1178" height="1335" alt="Катя Полоз">
     </div>
   </div>
 </header>
+
+<div class="hero-notch">
+  <a class="notch-btn" href="#next" aria-label="Листать дальше">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 5l7 6.5 7-6.5M5 12.5l7 6.5 7-6.5"/></svg>
+  </a>
+</div>
+</div>
 </body>
 </html>
