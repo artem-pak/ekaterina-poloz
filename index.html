@@ -126,7 +126,7 @@
 
   /* ---------- блок 3: автор программы (светлый фон) ---------- */
   /* белый блок заходит под скруглённый низ серого блока */
-  .author{position:relative;background:#fff;color:var(--ink);margin-top:-36px;padding:112px 0 72px;overflow:hidden}
+  .author{position:relative;z-index:1;background:#fff;color:var(--ink);margin-top:-36px;padding:112px 0 72px;overflow:hidden;border-radius:0 0 36px 36px}
   .author .wrap{max-width:1240px;display:flex;flex-direction:column}
   .author-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .author h2{margin-top:14px;font-size:clamp(46px,13vw,104px);line-height:.98;font-weight:600;letter-spacing:-.055em}
@@ -135,8 +135,8 @@
   .g{white-space:nowrap;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
   /* фото автора: скруглённая карточка (временно стоит прежнее фото, потом заменим на присланное) */
-  .author-photo{position:relative;margin:28px 0 0;order:2;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:#d9dbe2}
-  .author-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%}
+  .author-photo{position:relative;margin:28px 0 0;order:2;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:#e4e2df}
+  .author-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 10%}
 
   .author-list{order:3;margin-top:28px;padding:0;list-style:none;counter-reset:a}
   .author-list li{counter-increment:a;position:relative;padding:22px 0 22px 44px;border-top:1px solid #e1e6ec;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#1c2430}
@@ -149,6 +149,36 @@
     .author-head{grid-column:1;grid-row:1}
     .author-list{grid-column:1;grid-row:2;margin-top:36px}
     .author-photo{grid-column:2;grid-row:1 / span 2;align-self:start;margin:0;border-radius:36px}
+  }
+
+  /* ---------- блок 4: о профессии (чёрный фон) ---------- */
+  .prof{position:relative;background:#000;color:#fff;margin-top:-36px;padding:120px 0 80px}
+  .prof .wrap{max-width:1240px}
+  .prof-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8b93a1}
+  .prof h2{margin-top:14px;font-size:clamp(38px,10.4vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance}
+  .prof h2.h2-2{margin-top:72px;font-size:clamp(32px,8.6vw,60px)}
+  .nums{margin-top:28px;display:grid;grid-template-columns:1fr;gap:12px}
+  .num{border-radius:30px;background:#fff;color:var(--ink);padding:26px 26px 30px}
+  .num span{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:#6b6f78}
+  .num b{display:block;margin-top:34px;font-size:clamp(38px,11vw,60px);line-height:1;font-weight:400;letter-spacing:-.05em;white-space:nowrap}
+  .num p{margin-top:14px;font-size:clamp(16px,1.35vw,18px);line-height:1.4;color:#4a4a4a}
+  .prof-note{margin-top:18px;font-size:15px;color:#8b93a1}
+
+  .reasons{margin-top:28px;display:grid;grid-template-columns:1fr;gap:12px}
+  .reason{border-radius:28px;background:#111214;border:1px solid #26292f;padding:26px 24px 28px}
+  .reason h3{font-size:clamp(22px,2.1vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
+  .reason p{margin-top:12px;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:#b6bdc9;text-wrap:pretty}
+  .prof-cta{margin-top:40px;container-type:inline-size}
+  .prof-cta .cta-in{margin:0 auto}
+
+  @media (min-width:760px){
+    .prof{padding:150px 0 110px}
+    .nums{margin-top:44px;grid-template-columns:repeat(3,1fr);gap:16px}
+    .num{padding:32px 30px 36px;border-radius:34px}
+    .reasons{margin-top:44px;grid-template-columns:repeat(3,1fr);gap:16px}
+    .reason{padding:30px 28px 34px;border-radius:32px}
+    .prof-cta{margin-top:56px}
+    .prof-cta .btn{display:block;width:auto;padding:24px 44px;font-size:18px}
   }
 </style>
 </head>
@@ -234,7 +264,7 @@
       <p class="author-sub">Бизнес-ассистент и&nbsp;бизнес-координатор</p>
     </div>
 
-    <div class="author-photo"><img src="author-katya.webp" width="853" height="1280" alt="Катя Полоз" loading="lazy"></div>
+    <div class="author-photo"><img src="author-katya.webp?v=2" width="1024" height="1280" alt="Катя Полоз" loading="lazy"></div>
 
     <ol class="author-list">
       <li><b class="g">6&nbsp;лет</b> работаю бизнес&#8209;ассистентом удалённо, в&nbsp;офисе за&nbsp;всю жизнь проработала не&nbsp;больше месяца</li>
@@ -242,6 +272,31 @@
       <li>Работаю на&nbsp;себя, зарабатываю <b class="g">200–250&nbsp;тыс. в&nbsp;месяц</b> при&nbsp;<span class="nw">5–6&nbsp;часах</span> работы в&nbsp;день из&nbsp;дома</li>
       <li>Строила систему мотивации для&nbsp;сети клиник на&nbsp;<b class="g">200&nbsp;сотрудников</b></li>
     </ol>
+  </div>
+</section>
+
+<section class="prof" id="profession">
+  <div class="wrap">
+    <p class="prof-label">О профессии</p>
+    <h2>Бизнес-ассистент в&nbsp;цифрах</h2>
+    <div class="nums">
+      <div class="num"><span>Первый проект</span><b>30–50 тыс.&nbsp;₽</b><p>за&nbsp;проект на&nbsp;3–4&nbsp;часа в&nbsp;день</p></div>
+      <div class="num"><span>Через полгода или год</span><b>70–80 тыс.&nbsp;₽</b><p>за&nbsp;проект, а&nbsp;с&nbsp;двумя-тремя проектами 140–200&nbsp;тыс.</p></div>
+      <div class="num"><span>Бизнес-координатор</span><b>50–150 тыс.&nbsp;₽</b><p>за&nbsp;проект, программа готовит и&nbsp;к&nbsp;этому уровню</p></div>
+    </div>
+    <p class="prof-note">По&nbsp;моему опыту и&nbsp;опыту моих коллег.</p>
+
+    <h2 class="h2-2">Почему выбирают профессию бизнес&#8209;ассистента</h2>
+    <div class="reasons">
+      <div class="reason"><h3>Удалёнка</h3><p>Работаешь из&nbsp;дома или из&nbsp;любой точки мира, в&nbsp;своём ритме.</p></div>
+      <div class="reason"><h3>Низкий порог входа</h3><p>Не&nbsp;нужны код, дизайн и&nbsp;английский, а&nbsp;опыт администратора или менеджера пригодится с&nbsp;первого дня.</p></div>
+      <div class="reason"><h3>3–4&nbsp;часа в&nbsp;день</h3><p>Один проект занимает полдня, его можно совмещать с&nbsp;декретом или основной работой.</p></div>
+      <div class="reason"><h3>Спрос</h3><p>Малый бизнес тонет в&nbsp;мелких задачах, и&nbsp;предпринимателю нужен человек, который снимет с&nbsp;него рутину.</p></div>
+      <div class="reason"><h3>Карьера</h3><p>От&nbsp;ассистента на&nbsp;одном проекте до&nbsp;координатора, который выстраивает процессы во&nbsp;всём бизнесе.</p></div>
+      <div class="reason"><h3>ИИ</h3><p>Нейросети делают черновую работу, а&nbsp;решения и&nbsp;ответственность остаются за&nbsp;тобой, поэтому ты&nbsp;успеваешь больше.</p></div>
+    </div>
+
+    <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a></div></div>
   </div>
 </section>
 </body>
