@@ -57,9 +57,9 @@
 
   /* ТЕЛЕФОН: Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне её головы.
      Белый фон фото растворяется на белой странице (multiply), свечение остаётся. */
-  .hero-photo{position:relative;margin:14px -16px 0;display:flex;justify-content:flex-end;overflow:hidden}
-  .hero-photo img{display:block;flex:none;width:102%;max-width:none;height:auto;margin-right:-29%;mix-blend-mode:multiply}
-  .hero-stats{position:absolute;left:16px;top:12%;z-index:2;display:flex;flex-direction:column;gap:12px;width:42%}
+  .hero-photo{position:relative;margin:14px -16px 0;display:block;overflow:hidden}
+  .hero-photo img{display:block;width:185%;max-width:none;height:auto;margin-left:-24%;mix-blend-mode:multiply;pointer-events:none}
+  .hero-stats{position:absolute;left:16px;top:3%;z-index:2;display:flex;flex-direction:column;gap:12px;width:42%}
   .hero-stats b{display:block;font-size:clamp(24px,7.6vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
   .hero-stats p{margin-top:4px;font-size:12px;line-height:1.25;color:var(--ink)}
   .hero-stats div:last-child p{max-width:108px}
@@ -92,7 +92,7 @@
     .stat-card svg{position:absolute;right:18px;top:20px;width:22px;height:22px;stroke:var(--ink);fill:none;stroke-width:2;stroke-linecap:square}
 
     .hero-photo{grid-column:2;grid-row:1 / span 5;align-self:end;margin:0;display:block;overflow:visible;width:100%}
-    .hero-photo img{position:static;display:block;width:100%;height:auto;margin:0;transform:none}
+    .hero-photo img{position:relative;display:block;width:158%;max-width:none;height:auto;margin:0 0 0 -29%;transform:none}
     .hero-stats{display:none}
   }
   @media (min-width:960px) and (max-width:1199px){
@@ -425,7 +425,7 @@
         <div><b>6&nbsp;лет</b><p>мой опыт бизнес&#8209;ассистента на&nbsp;удалёнке</p></div>
         <div class="mom"><b>Мама<br>в&nbsp;декрете</b><p>работаю 2-3&nbsp;часа в&nbsp;день</p></div>
       </div>
-      <img src="katya.jpg?v=3" width="1122" height="1358" alt="Катя Полоз">
+      <img src="hero-katya.webp" width="1536" height="1024" alt="Катя Полоз">
     </div>
 
     <div class="stat-cards">
