@@ -152,7 +152,7 @@
   }
 
   /* ---------- блок 4: о профессии (чёрный фон) ---------- */
-  .prof{position:relative;background:#000;color:#fff;margin-top:-36px;padding:120px 0 80px}
+  .prof{position:relative;z-index:1;background:#000;color:#fff;margin-top:-36px;padding:120px 0 80px;border-radius:0 0 36px 36px}
   .prof .wrap{max-width:1240px}
   .prof-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8b93a1}
   .prof h2{margin-top:14px;font-size:clamp(38px,10.4vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance}
@@ -196,6 +196,32 @@
     .reason{padding:30px 28px 34px;border-radius:32px}
     .prof-cta{margin-top:56px}
     .prof-cta .btn{display:block;width:auto;padding:24px 44px;font-size:18px}
+  }
+
+  /* ---------- блок 5: чем занимается бизнес-ассистент (светло-серый) ---------- */
+  .duties{position:relative;background:#eee;color:var(--ink);margin-top:-36px;padding:132px 0 88px}
+  .duties .wrap{max-width:1240px}
+  .duties h2{font-size:clamp(38px,10.4vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance}
+  .duties-sub{margin-top:18px;max-width:640px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:var(--text);text-wrap:pretty}
+  .duties-grid{margin-top:34px;display:grid;grid-template-columns:1fr;gap:12px}
+  .tasks-list{list-style:none;border-radius:30px;background:#fff;padding:8px 24px}
+  .tasks-list li{position:relative;padding:20px 0 20px 62px;min-height:78px;display:flex;align-items:center;border-top:1px solid #e6e9ee;font-size:clamp(18px,1.6vw,21px);line-height:1.4;font-weight:500;letter-spacing:-.01em}
+  .tasks-list li:first-child{border-top:0}
+  .tasks-list li::before{content:attr(data-e);position:absolute;left:0;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:14px;background:#f1f4f8;font-size:23px;line-height:1;display:grid;place-items:center}
+  .fit-col{display:grid;gap:12px;align-content:start}
+  .fit{border-radius:30px;padding:26px 26px 28px;background:#fff}
+  .fit h3{font-size:clamp(22px,2.1vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
+  .fit ul{margin-top:18px;list-style:none;display:grid;gap:14px}
+  .fit li{position:relative;padding-left:38px;font-size:clamp(16px,1.35vw,18px);line-height:1.4;color:var(--text)}
+  .fit li::before{content:"";position:absolute;left:0;top:0;width:26px;height:26px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E") center/14px 14px no-repeat,var(--grad)}
+  .fit.no{background:#0b0b0d;color:#fff}
+  .fit.no li{color:#c4cad4}
+  .fit.no li::before{background:#2a2d33 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/12px 12px no-repeat}
+  @media (min-width:960px){
+    .duties{padding:160px 0 110px}
+    .duties-grid{margin-top:48px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start}
+    .tasks-list{border-radius:34px;padding:12px 34px}
+    .fit{border-radius:34px;padding:32px 32px 34px}
   }
 </style>
 </head>
@@ -328,6 +354,40 @@
     </div>
 
     <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a></div></div>
+  </div>
+</section>
+
+<section class="duties" id="duties">
+  <div class="wrap">
+    <h2>Чем занимается бизнес&#8209;ассистент</h2>
+    <p class="duties-sub">Ассистент работает на&nbsp;одного руководителя и&nbsp;забирает себе его рутину, чтобы тот занимался ростом бизнеса.</p>
+
+    <div class="duties-grid">
+      <ol class="tasks-list">
+        <li data-e="🗓️">Ведёт календарь и&nbsp;задачи руководителя</li>
+        <li data-e="💬">Разбирает почту и&nbsp;мессенджеры, организует созвоны</li>
+        <li data-e="📊">Готовит документы, отчёты и&nbsp;презентации</li>
+        <li data-e="✈️">Ищет подрядчиков, организует встречи и&nbsp;поездки</li>
+        <li data-e="📚">Собирает базы знаний и&nbsp;регламенты для&nbsp;команды</li>
+      </ol>
+      <div class="fit-col">
+        <div class="fit">
+          <h3>Подходит тебе</h3>
+          <ul>
+            <li>если ты&nbsp;любишь порядок или хочешь этому научиться</li>
+            <li>если тебе легко общаться с&nbsp;людьми</li>
+          </ul>
+        </div>
+        <div class="fit no">
+          <h3>Не понадобится для старта</h3>
+          <ul>
+            <li>опыт работы ассистентом</li>
+            <li>профильное образование</li>
+            <li>код и&nbsp;английский</li>
+          </ul>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 </body>
