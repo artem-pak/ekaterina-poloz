@@ -124,35 +124,31 @@
     .why-card{border-radius:34px;padding:38px 38px 42px}
   }
 
-  /* ---------- блок 3: автор программы (чёрный фон) ---------- */
-  /* чёрный блок заходит под скруглённый низ серого блока */
-  .author{position:relative;background:#000;color:#fff;margin-top:-36px;padding:112px 0 0;overflow:hidden}
+  /* ---------- блок 3: автор программы (светлый фон) ---------- */
+  /* белый блок заходит под скруглённый низ серого блока */
+  .author{position:relative;background:#fff;color:var(--ink);margin-top:-36px;padding:112px 0 72px;overflow:hidden}
   .author .wrap{max-width:1240px;display:flex;flex-direction:column}
-  .author-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8b93a1}
+  .author-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
   .author h2{margin-top:14px;font-size:clamp(46px,13vw,104px);line-height:.98;font-weight:600;letter-spacing:-.055em}
-  .author-sub{margin-top:18px;max-width:520px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:#b9c0cc;text-wrap:pretty}
+  .author-sub{margin-top:18px;max-width:520px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:var(--text);text-wrap:pretty}
   .nw{white-space:nowrap}
   .g{white-space:nowrap;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
 
-  .author-photo{position:relative;margin:26px -16px 0;order:2}
-  .author-photo::before{content:"";position:absolute;left:50%;top:6%;width:96%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
-    background:radial-gradient(circle,rgba(45,107,255,.85) 0%,rgba(24,168,255,.6) 36%,rgba(18,214,196,.38) 56%,rgba(0,0,0,0) 72%);filter:blur(8px)}
-  .author-photo img{position:relative;display:block;width:78%;height:auto;margin:0 auto;
-    -webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)}
+  /* фото автора: скруглённая карточка (временно стоит прежнее фото, потом заменим на присланное) */
+  .author-photo{position:relative;margin:28px 0 0;order:2;aspect-ratio:4/5;border-radius:32px;overflow:hidden;background:#f1f5fa}
+  .author-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 8%;mix-blend-mode:multiply}
 
-  .author-list{order:3;margin-top:8px;padding:0 0 72px;list-style:none;counter-reset:a}
-  .author-list li{counter-increment:a;position:relative;padding:22px 0 22px 44px;border-top:1px solid #2a2d33;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#e6e9ee}
-  .author-list li::before{content:counter(a);position:absolute;left:0;top:23px;font-size:15px;font-weight:600;color:#6f7787}
-  .author-list li:last-child{border-bottom:1px solid #2a2d33}
+  .author-list{order:3;margin-top:28px;padding:0;list-style:none;counter-reset:a}
+  .author-list li{counter-increment:a;position:relative;padding:22px 0 22px 44px;border-top:1px solid #e1e6ec;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#1c2430}
+  .author-list li::before{content:counter(a);position:absolute;left:0;top:23px;font-size:15px;font-weight:600;color:#8b93a1}
+  .author-list li:last-child{border-bottom:1px solid #e1e6ec}
 
   @media (min-width:960px){
-    .author{padding:150px 0 0}
+    .author{padding:150px 0 100px}
     .author .wrap{display:grid;grid-template-columns:minmax(0,1fr) clamp(420px,42vw,540px);column-gap:56px;align-items:start}
     .author-head{grid-column:1;grid-row:1}
-    .author-list{grid-column:1;grid-row:2;margin-top:36px;padding-bottom:96px}
-    .author-photo{grid-column:2;grid-row:1 / span 2;align-self:end;margin:0}
-    .author-photo img{width:100%;-webkit-mask-image:none;mask-image:none}
-    .author-photo::before{top:2%;width:110%}
+    .author-list{grid-column:1;grid-row:2;margin-top:36px}
+    .author-photo{grid-column:2;grid-row:1 / span 2;align-self:start;margin:0;border-radius:36px}
   }
 </style>
 </head>
@@ -238,7 +234,7 @@
       <p class="author-sub">Бизнес-ассистент и&nbsp;бизнес-координатор, работаю удалённо с&nbsp;первого дня.</p>
     </div>
 
-    <div class="author-photo"><img src="katya-cut.webp" width="900" height="1020" alt="Катя Полоз" loading="lazy"></div>
+    <div class="author-photo"><img src="katya.jpg?v=2" width="1122" height="1402" alt="Катя Полоз" loading="lazy"></div>
 
     <ol class="author-list">
       <li><b class="g">6&nbsp;лет</b> работаю бизнес&#8209;ассистентом удалённо, в&nbsp;офисе за&nbsp;всю жизнь проработала не&nbsp;больше месяца</li>
