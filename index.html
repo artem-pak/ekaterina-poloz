@@ -54,12 +54,12 @@
   .intro{margin:18px auto 0;max-width:560px;text-align:center;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:var(--muted);text-wrap:balance}
 
   /* Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне головы */
-  .hero-photo{position:relative;margin-top:20px;padding-top:44px;display:flex;justify-content:flex-end;overflow:hidden}
+  .hero-photo{position:relative;margin-top:28px;display:flex;justify-content:flex-end;overflow:hidden}
   .hero-photo img{display:block;flex:none;width:100%;max-width:none;height:auto;margin-right:-19%}
-  .hero-stats{position:absolute;left:0;top:0;z-index:2;display:flex;flex-direction:column;gap:12px;width:42%}
-  .hero-stats b{display:block;font-size:clamp(26px,8.2vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
-  .hero-stats p{margin-top:5px;font-size:12px;line-height:1.28;color:var(--ink)}
-  .hero-stats span{display:block;margin-top:2px;font-size:11px;line-height:1.28;color:var(--muted)}
+  .hero-stats{position:absolute;left:0;top:2.5%;z-index:2;display:flex;flex-direction:column;gap:10px;width:42%}
+  .hero-stats b{display:block;font-size:clamp(24px,7.6vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
+  .hero-stats p{margin-top:4px;font-size:11.5px;line-height:1.25;color:var(--ink)}
+  .hero-stats span{display:block;margin-top:2px;font-size:10.5px;line-height:1.25;color:var(--muted)}
 
   @media (min-width:760px){
     .hero{--notch-w:160px;--notch-h:22px;padding:52px 0 0}
@@ -67,9 +67,9 @@
     .notch-btn svg{width:32px;height:32px}
     .btn{padding:24px 10px}
     .facts{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
-    .hero-photo{margin-top:40px;padding-top:0}
+    .hero-photo{margin-top:40px}
     .hero-photo img{width:min(560px,62%);margin-right:12%}
-    .hero-stats{top:10%;gap:30px;width:34%}
+    .hero-stats{top:8%;gap:30px;width:34%}
     .hero-stats b{font-size:clamp(40px,4.6vw,56px)}
     .hero-stats p{margin-top:8px;font-size:17px}
     .hero-stats span{font-size:15px}
