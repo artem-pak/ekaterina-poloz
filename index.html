@@ -100,6 +100,13 @@
     .stat-card b{font-size:clamp(30px,3.6vw,40px)}
   }
 
+  /* когда кнопке тесно (телефон, узкое окно), «консультацию» переносится на вторую строку, шрифт не мельчает */
+  .m-br{display:none}
+  @container (max-width:520px){
+    .btn{white-space:normal;font-size:17px;line-height:1.25;padding:18px 20px}
+    .m-br{display:inline}
+  }
+
   /* ---------- блок 2: почему выбирают программу (серый фон, большие скругления) ---------- */
   /* серый фон заходит под скруглённый низ первого экрана, поэтому за вырезом и углами тоже серый */
   .why{position:relative;background:#eee;color:var(--ink);margin-top:-44px;padding:140px 0 72px}
@@ -129,7 +136,7 @@
       </div>
       <p class="lead">Освой профессию с&nbsp;нуля за&nbsp;6&nbsp;недель и&nbsp;начни зарабатывать от&nbsp;150.000&nbsp;₽ в&nbsp;месяц</p>
       <div class="cta"><div class="cta-in">
-        <a class="btn" href="#consult">Записаться на&nbsp;карьерную консультацию</a>
+        <a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a>
         <p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p>
       </div></div>
     </div>
