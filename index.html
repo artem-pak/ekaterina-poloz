@@ -227,26 +227,33 @@
   /* ---------- блок 6: программа обучения (чёрный) ---------- */
   .program{position:relative;background:#000;color:#fff;margin-top:-36px;padding:128px 0 96px}
   .program .wrap{max-width:1240px}
-  .program-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8b93a1}
-  .program h2{margin-top:14px;font-size:clamp(38px,10.4vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance}
-  .p-stats{margin-top:34px;display:grid;grid-template-columns:1fr 1fr;gap:26px 16px}
-  .p-stat{padding-top:18px;border-top:3px solid transparent;border-image:var(--grad) 1}
-  .p-stat b{display:block;font-size:clamp(28px,7.6vw,44px);line-height:1;font-weight:600;letter-spacing:-.04em;white-space:nowrap}
-  .p-stat span{display:block;margin-top:10px;font-size:clamp(14px,1.3vw,16px);line-height:1.35;color:#9aa3b0}
-  .steps{margin-top:40px;display:grid;grid-template-columns:1fr;gap:12px}
-  .step{position:relative;border-radius:28px;background:#111214;border:1px solid #26292f;padding:24px 24px 28px}
-  .step .when{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#8b93a1;padding-right:52px}
-  .step .no{position:absolute;right:22px;top:20px;font-size:30px;font-weight:700;letter-spacing:-.03em;color:#6b7482}
-  .step h3{margin-top:12px;font-size:clamp(22px,2.1vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
-  .step p{margin-top:10px;font-size:clamp(16px,1.3vw,18px);line-height:1.5;color:#b6bdc9;text-wrap:pretty}
-  .step.coord{background:transparent;border:1.5px dashed #3a3f49}
-  .step.coord .when{color:#12d6c4}
+  .program h2{font-size:clamp(36px,9.6vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance;max-width:980px}
+  .p-stats{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+  .p-stat{border-radius:26px;background:#111214;border:1px solid #26292f;padding:22px 22px 24px}
+  .p-stat b{display:block;font-size:clamp(20px,5.6vw,42px);line-height:1;font-weight:700;letter-spacing:-.04em;white-space:nowrap;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .p-stat span{display:block;margin-top:12px;font-size:clamp(14px,1.3vw,16px);line-height:1.35;color:#b6bdc9}
+
+  /* путь: белые скруглённые карточки со стрелками между ними (вниз на телефоне, вправо на компьютере) */
+  .steps{margin-top:40px;display:grid;grid-template-columns:1fr;gap:14px}
+  .step{position:relative;border-radius:30px;background:#fff;color:var(--ink);padding:24px 24px 28px}
+  .step .no{display:inline-block;font-size:15px;font-weight:700;letter-spacing:.02em;color:#6b7482}
+  .step .when{margin-top:0;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#6b7482}
+  .step h3{margin-top:8px;font-size:clamp(23px,2.2vw,27px);line-height:1.12;font-weight:600;letter-spacing:-.04em;text-wrap:balance}
+  .step p:not(.when){margin-top:12px;font-size:clamp(16px,1.3vw,17px);line-height:1.45;color:#4a4a4a;text-wrap:pretty}
+  .step:not(:last-child)::after{content:"";position:absolute;z-index:2;left:50%;bottom:-29px;width:44px;height:44px;margin-left:-22px;border-radius:50%;
+    background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E") center/20px 20px no-repeat}
+  .step.coord{background:var(--grad);color:#fff}
+  .step.coord .no,.step.coord .when{color:rgba(255,255,255,.85)}
+  .step.coord p:not(.when){color:rgba(255,255,255,.95)}
+  .only{display:inline-block;margin-top:12px;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.22);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase}
   @media (min-width:960px){
     .program{padding:160px 0 120px}
-    .p-stats{margin-top:52px;grid-template-columns:repeat(4,1fr);gap:24px}
-    .steps{margin-top:56px;grid-template-columns:1fr 1fr;gap:16px}
-    .step{padding:28px 30px 32px;border-radius:30px}
-    .step .no{right:28px;top:24px;font-size:34px}
+    .p-stats{margin-top:48px;grid-template-columns:repeat(4,1fr);gap:16px}
+    .p-stat{border-radius:30px;padding:28px 28px 30px}
+    .steps{margin-top:52px;grid-template-columns:repeat(4,1fr);gap:28px 16px}
+    .step{border-radius:32px;padding:26px 24px 30px;min-height:262px}
+    .step:not(:last-child)::after{left:auto;bottom:auto;right:-30px;top:50%;margin:-22px 0 0;background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/20px 20px no-repeat}
+    .step:nth-child(4)::after{left:50%;right:auto;top:auto;bottom:-36px;margin:0 0 0 -22px;background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E") center/20px 20px no-repeat}
   }
 </style>
 </head>
@@ -418,8 +425,7 @@
 
 <section class="program" id="program">
   <div class="wrap">
-    <p class="program-label">Программа</p>
-    <h2>Программа обучения</h2>
+    <h2>Какой путь ты&nbsp;пройдёшь на&nbsp;сопровождении?</h2>
 
     <div class="p-stats">
       <div class="p-stat"><b>6 недель</b><span>обучения и&nbsp;неделя предобучения</span></div>
@@ -429,14 +435,14 @@
     </div>
 
     <div class="steps">
-      <article class="step"><span class="no">01</span><p class="when">До старта</p><h3>Предобучение</h3><p>Понимаешь, где в&nbsp;бизнесе нужен ассистент, и&nbsp;выбираешь сферу для своего портфолио.</p></article>
-      <article class="step"><span class="no">02</span><p class="when">Неделя 1</p><h3>Время и&nbsp;входящие руководителя</h3><p>Ведёшь календарь, задачи и&nbsp;почту руководителя так, что он перестаёт держать всё в&nbsp;голове.</p></article>
-      <article class="step"><span class="no">03</span><p class="when">Неделя 2</p><h3>Документы, отчёты и&nbsp;презентации</h3><p>Собираешь отчёт, дашборд и&nbsp;презентацию, которые сразу идут в&nbsp;портфолио.</p></article>
-      <article class="step"><span class="no">04</span><p class="when">Неделя 3</p><h3>Команда, подрядчики и&nbsp;поездки</h3><p>Берёшь на&nbsp;себя подрядчиков, встречи и&nbsp;поездки и&nbsp;собираешь базу знаний для&nbsp;команды.</p></article>
-      <article class="step"><span class="no">05</span><p class="when">Конец 3-й недели</p><h3>Мастер-майнд по&nbsp;нейросетям</h3><p>Отдаёшь нейросетям черновую работу и&nbsp;делаешь те&nbsp;же задачи быстрее.</p></article>
-      <article class="step"><span class="no">06</span><p class="when">Неделя 4</p><h3>Резюме и&nbsp;портфолио</h3><p>Резюме и&nbsp;портфолио, с&nbsp;которыми зовут на&nbsp;собеседования.</p></article>
-      <article class="step"><span class="no">07</span><p class="when">Недели 5–6</p><h3>Поиск проекта</h3><p>Первые собеседования с&nbsp;предпринимателями и&nbsp;именной сертификат.</p></article>
-      <article class="step coord"><span class="no">08</span><p class="when">Недели 4–6 · только координатор</p><h3>Бизнес-координатор</h3><p>Аудит реального бизнеса в&nbsp;портфолио и&nbsp;выход на&nbsp;проекты координатора за&nbsp;50–150&nbsp;тыс.</p></article>
+      <article class="step"><p class="when">До старта</p><h3>Предобучение</h3><p>Понимаешь, где в&nbsp;бизнесе нужен ассистент, и&nbsp;выбираешь сферу для своего портфолио.</p></article>
+      <article class="step"><p class="when">Неделя 1</p><h3>Время и&nbsp;входящие руководителя</h3><p>Ведёшь календарь, задачи и&nbsp;почту руководителя так, что он перестаёт держать всё в&nbsp;голове.</p></article>
+      <article class="step"><p class="when">Неделя 2</p><h3>Документы, отчёты и&nbsp;презентации</h3><p>Собираешь отчёт, дашборд и&nbsp;презентацию, которые сразу идут в&nbsp;портфолио.</p></article>
+      <article class="step"><p class="when">Неделя 3</p><h3>Команда, подрядчики и&nbsp;поездки</h3><p>Берёшь на&nbsp;себя подрядчиков, встречи и&nbsp;поездки и&nbsp;собираешь базу знаний для&nbsp;команды.</p></article>
+      <article class="step"><p class="when">Конец 3-й недели</p><h3>Мастер-майнд по&nbsp;нейросетям</h3><p>Отдаёшь нейросетям черновую работу и&nbsp;делаешь те&nbsp;же задачи быстрее.</p></article>
+      <article class="step"><p class="when">Неделя 4</p><h3>Резюме и&nbsp;портфолио</h3><p>Резюме и&nbsp;портфолио, с&nbsp;которыми зовут на&nbsp;собеседования.</p></article>
+      <article class="step"><p class="when">Недели 5–6</p><h3>Поиск проекта</h3><p>Первые собеседования с&nbsp;предпринимателями и&nbsp;именной сертификат.</p></article>
+      <article class="step coord"><p class="when">Недели 4–6</p><span class="only">Только координатор</span><h3>Бизнес-координатор</h3><p>Аудит реального бизнеса в&nbsp;портфолио и&nbsp;выход на&nbsp;проекты координатора за&nbsp;50–150&nbsp;тыс.</p></article>
     </div>
   </div>
 </section>
