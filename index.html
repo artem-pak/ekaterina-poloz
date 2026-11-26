@@ -37,7 +37,9 @@
   .notch-btn svg{width:30px;height:30px;display:block}
   body{padding-bottom:110px}
   .hero .wrap{max-width:960px}
-  .hero-text{container-type:inline-size}
+  .hero-text{container-type:inline-size;display:flex;flex-direction:column}
+  /* на телефоне блок с фактами стоит над кнопкой, на компьютере под ней */
+  .kicker{order:1} h1{order:2} .lead{order:3} .facts{order:4} .cta{order:5} .intro{order:6}
 
   .kicker{font-size:clamp(16px,1.5vw,19px);color:var(--muted)}
   /* заголовок и кнопка всегда в одну строку: размер считается от ширины колонки */
@@ -47,7 +49,7 @@
   .btn{display:block;width:100%;white-space:nowrap;text-align:center;text-decoration:none;font-weight:700;font-size:min(18px,calc((100cqi - 24px) / 23.9));letter-spacing:0;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:12px;padding:22px 10px;transition:filter .15s,transform .15s}
   .btn:hover{filter:brightness(1.06)} .btn:active{transform:scale(.99)}
 
-  .facts{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+  .facts{margin-top:26px;display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
   .fact span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .fact b{display:block;margin-top:6px;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 
@@ -66,7 +68,7 @@
     .notch-btn{width:64px;height:64px;top:-6px}
     .notch-btn svg{width:32px;height:32px}
     .btn{padding:24px 10px}
-    .facts{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
+    .facts{order:7;margin-top:30px;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
     .hero-photo{margin-top:40px}
     .hero-photo img{width:min(560px,62%);margin-right:12%}
     .hero-stats{top:8%;gap:30px;width:34%}
