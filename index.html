@@ -11,7 +11,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#e9eef3;--ink:#0b0b0b;--text:#3a4150;--muted:#6b7482;--line:#e1e8ef;--card:#f3f6fa;
+    --bg:#eeeeee;--ink:#0b0b0b;--text:#3a4150;--muted:#6b7482;--line:#e1e8ef;--card:#f3f6fa;
     --blue:#2d6bff;--sky:#18a8ff;--teal:#12d6c4;
     --grad:linear-gradient(90deg,#2d6bff 0%,#18a8ff 52%,#12d6c4 100%);
   }
@@ -58,10 +58,11 @@
   /* ТЕЛЕФОН: Катя стоит самой нижней, вплотную к низу экрана; цифры слева на уровне её головы.
      Белый фон фото растворяется на белой странице (multiply), свечение остаётся. */
   .hero-photo{position:relative;margin-top:14px;display:flex;justify-content:flex-end;overflow:hidden}
-  .hero-photo img{display:block;flex:none;width:128%;max-width:none;height:auto;margin-right:-42%;mix-blend-mode:multiply}
-  .hero-stats{position:absolute;left:0;top:12%;z-index:2;display:flex;flex-direction:column;gap:17px;width:42%}
+  .hero-photo img{display:block;flex:none;width:112%;max-width:none;height:auto;margin-right:-35%;mix-blend-mode:multiply}
+  .hero-stats{position:absolute;left:0;top:12%;z-index:2;display:flex;flex-direction:column;gap:12px;width:42%}
   .hero-stats b{display:block;font-size:clamp(24px,7.6vw,40px);line-height:1;font-weight:600;letter-spacing:-.045em;white-space:nowrap}
   .hero-stats p{margin-top:4px;font-size:12px;line-height:1.25;color:var(--ink)}
+  .hero-stats div:last-child p{max-width:118px}
   .hero-stats span{display:block;margin-top:1px;font-size:12px;line-height:1.2;color:#3e4655}
 
   @media (min-width:960px){
@@ -99,15 +100,15 @@
     .stat-card b{font-size:clamp(30px,3.6vw,40px)}
   }
 
-  /* ---------- блок 2: почему выбирают программу (чёрный фон, большие скругления) ---------- */
-  /* чёрный фон заходит под скруглённый низ первого экрана, поэтому за вырезом и углами тоже чёрный */
-  .why{position:relative;background:#000;color:#fff;margin-top:-44px;padding:140px 0 72px}
+  /* ---------- блок 2: почему выбирают программу (серый фон, большие скругления) ---------- */
+  /* серый фон заходит под скруглённый низ первого экрана, поэтому за вырезом и углами тоже серый */
+  .why{position:relative;background:#eee;color:var(--ink);margin-top:-44px;padding:140px 0 72px}
   .why .wrap{max-width:1240px}
-  .why h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;font-weight:600;letter-spacing:-.045em;text-wrap:balance;color:#fff}
+  .why h2{font-size:clamp(40px,11vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.045em;text-wrap:balance;color:var(--ink)}
   .why-grid{margin-top:30px;display:grid;grid-template-columns:1fr;gap:12px}
   .why-card{border-radius:30px;background:#fff;color:var(--ink);padding:28px 26px 30px}
   .why-card .n{display:block;font-size:16px;font-weight:600;letter-spacing:.02em;color:#6b6f78}
-  .why-card h3{margin-top:26px;font-size:clamp(23px,2.2vw,28px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
+  .why-card h3{margin-top:26px;font-size:clamp(21px,5.4vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
   .why-card p{margin-top:14px;font-size:clamp(16px,1.35vw,18px);line-height:1.5;color:#4a4a4a;text-wrap:pretty}
   .why-card b{font-weight:600;color:var(--ink)}
   @media (min-width:760px){
