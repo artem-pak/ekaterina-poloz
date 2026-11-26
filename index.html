@@ -294,6 +294,52 @@
     .bonus{border-radius:34px;padding:32px 32px 36px}
     .bonuses .prof-cta{margin-top:64px}
   }
+
+  /* ---------- блок 8: резюме (чёрный) ---------- */
+  .resume{position:relative;z-index:1;background:#000;color:#fff;margin-top:-36px;padding:128px 0 80px;border-radius:0 0 36px 36px}
+  .resume .wrap{max-width:1240px}
+  .resume h2{font-size:clamp(36px,9.6vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance;max-width:900px}
+  .cv{margin-top:34px;border-radius:30px;background:#fff;color:var(--ink);padding:24px 20px 26px}
+  .cv-top{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding-bottom:22px;border-bottom:1px solid #e6e9ee}
+  .cv-ava{display:grid;place-items:center;width:68px;height:68px;border-radius:50%;background:#e9ecf1;color:#6b7482;font-size:28px;font-weight:600}
+  .cv-who h3{font-size:clamp(26px,3vw,36px);line-height:1.05;font-weight:600;letter-spacing:-.04em}
+  .cv-role{margin-top:6px;font-size:clamp(17px,1.6vw,20px);line-height:1.3}
+  .cv-meta{margin-top:4px;font-size:15px;line-height:1.4;color:#5d6674}
+  .cv-cert{grid-column:1/-1;justify-self:start;padding:9px 16px;border-radius:999px;background:#000;color:#fff;font-size:14px;font-weight:600}
+  .cv-label{margin-top:24px;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#5d6674}
+  .cv-chips{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+  .cv-chips li{padding:10px 16px;border-radius:999px;background:#f1f2f4;font-size:15px;line-height:1.2;font-weight:500}
+  .cv-port{list-style:none;margin-top:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .cv-port li{position:relative;overflow:hidden;border-radius:18px;aspect-ratio:4/3;background:#e9ecf1}
+  .cv-port img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.6)}
+  .cv-port span{position:absolute;left:8px;bottom:8px;padding:5px 10px;border-radius:999px;background:#fff;font-size:13px;font-weight:600}
+  .resume .prof-cta{margin-top:56px}
+  .resume .prof-cta .intro{color:#9aa3b2}
+  @media (min-width:960px){
+    .resume{padding:160px 0 110px}
+    .cv{margin-top:48px;border-radius:36px;padding:40px 44px 44px}
+    .cv-top{grid-template-columns:auto 1fr auto;gap:24px}
+    .cv-ava{width:88px;height:88px;font-size:34px}
+    .cv-cert{grid-column:auto;justify-self:end}
+    .cv-port{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+    .cv-port li{border-radius:22px;aspect-ratio:16/10}
+    .resume .prof-cta{margin-top:72px}
+  }
+
+  /* ---------- блок 9: кто с тобой (светлый) ---------- */
+  .support{position:relative;background:#eee;color:var(--ink);margin-top:-36px;padding:128px 0 72px}
+  .support .wrap{max-width:1240px}
+  .support h2{font-size:clamp(38px,10vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance;max-width:900px}
+  .sup-grid{margin-top:34px;display:grid;grid-template-columns:1fr;gap:12px}
+  .support .prof-cta{margin-top:48px}
+  .support .prof-cta .intro{color:#4f5766}
+  @media (min-width:960px){
+    .support{padding:160px 0 110px}
+    .sup-grid{margin-top:48px;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px}
+    .sup-grid .bonus{grid-column:span 2}
+    .sup-grid .bonus:nth-child(n+4){grid-column:span 3}
+    .support .prof-cta{margin-top:64px}
+  }
 </style>
 </head>
 <body>
@@ -498,6 +544,37 @@
       <article class="bonus"><h3><i>💬</i>Чат потока</h3><p>Общение с&nbsp;группой и&nbsp;отдельная тема для&nbsp;вопросов, где собраны мои голосовые ответы.</p></article>
       <article class="bonus"><h3><i>🎓</i>Дополнительные уроки</h3><p>Подборка бесплатных курсов по&nbsp;сайтам, дизайну и&nbsp;воронкам продаж и&nbsp;уроки по&nbsp;интерфейсам сервисов.</p></article>
       <article class="bonus"><h3><i>♾️</i>Шаблоны и&nbsp;доступ навсегда</h3><p>Мой шаблон портфолио, а&nbsp;уроки остаются у&nbsp;тебя в&nbsp;закрытом Telegram-канале.</p></article>
+    </div>
+    <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a><p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p></div></div>
+  </div>
+</section>
+<section class="resume" id="resume">
+  <div class="wrap">
+    <h2>Твоё резюме после обучения</h2>
+    <div class="cv">
+      <div class="cv-top">
+        <div class="cv-ava">А</div>
+        <div class="cv-who"><h3>Анна</h3><p class="cv-role">Бизнес-ассистент руководителя</p><p class="cv-meta">Удалённо, 3-4&nbsp;часа в&nbsp;день, готова к&nbsp;проекту</p></div>
+        <span class="cv-cert">Сертификат программы</span>
+      </div>
+      <p class="cv-label">Ключевые навыки</p>
+      <ul class="cv-chips"><li>Календарь и&nbsp;задачи руководителя</li><li>Почта и&nbsp;мессенджеры</li><li>Документооборот</li><li>Отчёты и&nbsp;дашборды</li><li>Презентации</li><li>Базы знаний и&nbsp;регламенты</li><li>Подрядчики, встречи и&nbsp;поездки</li><li>Работа с&nbsp;нейросетями</li></ul>
+      <p class="cv-label">Портфолио</p>
+      <ul class="cv-port"><li><img src="duty-1.webp" alt="" loading="lazy" style="object-position:0% 50%;transform-origin:0% 50%"><span>Календарь</span></li><li><img src="duty-1.webp" alt="" loading="lazy" style="object-position:100% 50%;transform-origin:100% 50%"><span>Задачник</span></li><li><img src="duty-3.webp" alt="" loading="lazy" style="object-position:0% 50%;transform-origin:0% 50%"><span>Отчёт</span></li><li><img src="duty-3.webp" alt="" loading="lazy" style="object-position:100% 100%;transform-origin:100% 100%"><span>Дашборд</span></li><li><img src="duty-3.webp" alt="" loading="lazy" style="object-position:100% 0%;transform-origin:100% 0%"><span>Презентация</span></li><li><img src="duty-5.webp" alt="" loading="lazy" style="object-position:50% 50%;transform-origin:50% 50%"><span>База знаний</span></li></ul>
+    </div>
+    <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a><p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p></div></div>
+  </div>
+</section>
+
+<section class="support" id="support">
+  <div class="wrap">
+    <h2>Кто с&nbsp;тобой на&nbsp;обучении</h2>
+    <div class="sup-grid">
+      <article class="bonus"><h3><i>👩‍🏫</i>Я лично</h3><p>Сопровождаю весь поток и&nbsp;раз в&nbsp;две недели разбираю твою ситуацию по&nbsp;презентации, которую ты присылаешь заранее.</p></article>
+      <article class="bonus"><h3><i>✅</i>Обратная связь</h3><p>По каждому домашнему заданию, резюме и&nbsp;откликам, чтобы ты не&nbsp;шла дальше с&nbsp;ошибками.</p></article>
+      <article class="bonus"><h3><i>🧠</i>Эксперты по&nbsp;нейросетям</h3><p>Ведут мастер-майнд и&nbsp;урок про&nbsp;поиск через базу предпринимателей.</p></article>
+      <article class="bonus"><h3><i>🎙️</i>Тема для вопросов</h3><p>Мои голосовые ответы на&nbsp;частые вопросы и&nbsp;урок, как спросить, чтобы быстро получить ответ.</p></article>
+      <article class="bonus"><h3><i>🏆</i>Созвон с&nbsp;лучшими</h3><p>В&nbsp;конце потока я&nbsp;лично созваниваюсь с&nbsp;ученицами, которые сделали все задания и&nbsp;пришли на&nbsp;каждый разбор.</p></article>
     </div>
     <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a><p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p></div></div>
   </div>
