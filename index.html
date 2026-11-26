@@ -359,11 +359,15 @@
   .case{min-height:120px;display:grid;place-items:center;text-align:center;padding:24px;border-radius:30px;background:transparent;border:2px dashed #aab1bc;color:#5d6674;font-size:clamp(16px,1.4vw,19px);line-height:1.4}
   .case-note{margin-top:20px;font-size:15px;color:#5d6674}
   .steps3{list-style:none;margin-top:34px;display:grid;gap:14px}
-  .steps3 li{position:relative;border-radius:30px;background:#fff;color:var(--ink);padding:24px 24px 30px}
+  .steps3>li{position:relative;border-radius:30px;background:#fff;color:var(--ink);padding:24px 24px 30px}
   .st-head{display:flex;align-items:center;gap:12px}
   .st-head i{display:grid;place-items:center;width:48px;height:48px;border-radius:15px;background:#f1f4f8;font-style:normal;font-size:24px;line-height:1}
   .st-head span{font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#5d6674}
-  .steps3 li:not(:last-child)::after{content:"";position:absolute;z-index:2;left:50%;bottom:-29px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E") center/20px 20px no-repeat,#000}
+  .steps3>li:not(:last-child)::after{content:"";position:absolute;z-index:2;left:50%;bottom:-29px;width:44px;height:44px;margin-left:-22px;border-radius:50%;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M12 5v14M6 13l6 6 6-6'/%3E%3C/svg%3E") center/20px 20px no-repeat,#000}
+  .steps3 .st-title{font-weight:700}
+  .st-list{list-style:none;margin-top:14px;display:grid;gap:12px}
+  .st-list li{position:relative;padding-left:30px;font-size:clamp(16px,1.4vw,19px);line-height:1.45;font-weight:500;color:#1d2733;text-wrap:pretty}
+  .st-list li::before{content:"";position:absolute;left:0;top:.42em;width:12px;height:12px;border-radius:50%;background:#000}
   .steps3 p{margin-top:20px;font-size:clamp(17px,1.5vw,20px);line-height:1.45;font-weight:500;text-wrap:pretty}
   .consult .prof-cta{margin-top:48px}
   .faq-list{margin-top:34px;display:grid;gap:10px;max-width:960px}
@@ -382,8 +386,8 @@
     .fmt{border-radius:34px;padding:38px 38px 36px}
     .case-grid{margin-top:48px;grid-template-columns:repeat(3,1fr);gap:16px}
     .steps3{margin-top:52px;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,1.7fr);gap:16px}
-    .steps3 li{border-radius:34px;padding:32px 32px 38px}
-    .steps3 li:not(:last-child)::after{left:auto;bottom:auto;right:-30px;top:50%;margin:-22px 0 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/20px 20px no-repeat,#000}
+    .steps3>li{border-radius:34px;padding:32px 32px 38px}
+    .steps3>li:not(:last-child)::after{left:auto;bottom:auto;right:-30px;top:50%;margin:-22px 0 0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12h14M13 6l6 6-6 6'/%3E%3C/svg%3E") center/20px 20px no-repeat,#000}
     .consult .prof-cta{margin-top:64px}
     .faq-list{margin-top:48px}
     .foot .wrap{flex-direction:row;justify-content:space-between}
@@ -658,7 +662,7 @@
     <ol class="steps3">
       <li><div class="st-head"><i>📝</i><span>Шаг 1</span></div><p>Оставляешь заявку на&nbsp;сайте</p></li>
       <li><div class="st-head"><i>🗓️</i><span>Шаг 2</span></div><p>Согласовываем удобное время, можно вечером или в&nbsp;выходной</p></li>
-      <li><div class="st-head"><i>💬</i><span>Шаг 3</span></div><p>На&nbsp;созвоне разбираем, что ты&nbsp;уже умеешь и&nbsp;как это применить в&nbsp;работе AI&nbsp;бизнес&#8209;ассистента. Подбираем вакансии под тебя и&nbsp;говорим, каких навыков тебе не&nbsp;хватает и&nbsp;чему нужно научиться. И&nbsp;считаем, сколько ты&nbsp;сможешь зарабатывать уже через месяц после обучения.</p></li>
+      <li><div class="st-head"><i>💬</i><span>Шаг 3</span></div><p class="st-title">На&nbsp;созвоне:</p><ul class="st-list"><li>разбираем, что ты&nbsp;уже умеешь и&nbsp;как это применить в&nbsp;работе AI&nbsp;бизнес&#8209;ассистента</li><li>подбираем вакансии под тебя</li><li>говорим, каких навыков тебе не&nbsp;хватает и&nbsp;чему нужно научиться</li><li>считаем, сколько ты&nbsp;сможешь зарабатывать уже через месяц после обучения</li></ul></li>
     </ol>
     <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a></div></div>
   </div>
