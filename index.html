@@ -203,12 +203,12 @@
   .duties .wrap{max-width:1240px}
   .duties h2{font-size:clamp(38px,10.4vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance}
   .duties-sub{margin-top:18px;max-width:640px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:var(--text);text-wrap:pretty}
-  .duties-grid{margin-top:34px;display:grid;grid-template-columns:1fr;gap:12px}
-  .tasks-list{list-style:none;border-radius:30px;background:#fff;padding:8px 24px}
-  .tasks-list li{position:relative;padding:20px 0 20px 62px;min-height:78px;display:flex;align-items:center;border-top:1px solid #e6e9ee;font-size:clamp(18px,1.6vw,21px);line-height:1.4;font-weight:500;letter-spacing:-.01em}
-  .tasks-list li:first-child{border-top:0}
-  .tasks-list li::before{content:attr(data-e);position:absolute;left:0;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:14px;background:#f1f4f8;font-size:23px;line-height:1;display:grid;place-items:center}
-  .fit-col{display:grid;gap:12px;align-content:start}
+  .tasks{list-style:none;margin-top:34px;display:grid;grid-template-columns:1fr;gap:12px}
+  .task{border-radius:30px;background:#fff;padding:22px 22px 22px;display:flex;flex-direction:column;gap:18px}
+  .task h3{display:flex;align-items:center;gap:14px;font-size:clamp(19px,1.7vw,23px);line-height:1.25;font-weight:600;letter-spacing:-.025em}
+  .task h3 i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#f1f4f8;font-style:normal;font-size:23px}
+  .task img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:20px;margin-top:auto;border:1px solid #e6e9ee}
+  .fit-row{margin-top:12px;display:grid;gap:12px}
   .fit{border-radius:30px;padding:26px 26px 28px;background:#fff}
   .fit h3{font-size:clamp(22px,2.1vw,26px);line-height:1.15;font-weight:600;letter-spacing:-.035em}
   .fit ul{margin-top:18px;list-style:none;display:grid;gap:14px}
@@ -219,8 +219,11 @@
   .fit.no li::before{background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M7 7l10 10M17 7L7 17'/%3E%3C/svg%3E") center/12px 12px no-repeat,linear-gradient(135deg,#ff5a5a,#e0182d)}
   @media (min-width:960px){
     .duties{padding:160px 0 110px}
-    .duties-grid{margin-top:48px;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:16px;align-items:start}
-    .tasks-list{border-radius:34px;padding:12px 34px}
+    .tasks{margin-top:48px;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+    .task{border-radius:34px;padding:28px 28px 28px}
+    .task:nth-child(5){grid-column:1/-1}
+    .task:nth-child(5) img{aspect-ratio:21/9}
+    .fit-row{margin-top:16px;grid-template-columns:1fr 1fr;gap:16px}
     .fit{border-radius:34px;padding:32px 32px 34px}
   }
 
@@ -396,15 +399,15 @@
     <h2>Чем занимается бизнес&#8209;ассистент</h2>
     <p class="duties-sub">Ассистент работает на&nbsp;одного руководителя и&nbsp;забирает себе его рутину, чтобы тот занимался ростом бизнеса.</p>
 
-    <div class="duties-grid">
-      <ol class="tasks-list">
-        <li data-e="🗓️">Ведёт календарь и&nbsp;задачи руководителя</li>
-        <li data-e="💬">Разбирает почту и&nbsp;мессенджеры, организует созвоны</li>
-        <li data-e="📊">Готовит документы, отчёты и&nbsp;презентации</li>
-        <li data-e="✈️">Ищет подрядчиков, организует встречи и&nbsp;поездки</li>
-        <li data-e="📚">Собирает базы знаний и&nbsp;регламенты для&nbsp;команды</li>
-      </ol>
-      <div class="fit-col">
+    <ul class="tasks">
+        <li class="task"><h3><i>🗓️</i>Ведёт календарь и&nbsp;задачи руководителя</h3><img src="duty-1.webp" alt="Календарь руководителя и список задач в Google Календаре" loading="lazy"></li>
+        <li class="task"><h3><i>💬</i>Разбирает почту и&nbsp;мессенджеры, организует созвоны</h3><img src="duty-2.webp" alt="Разобранная почта, рабочий чат и напоминание о созвоне" loading="lazy"></li>
+        <li class="task"><h3><i>📊</i>Готовит документы, отчёты и&nbsp;презентации</h3><img src="duty-3.webp" alt="Отчёт, презентация и дашборд" loading="lazy"></li>
+        <li class="task"><h3><i>✈️</i>Ищет подрядчиков, организует встречи и&nbsp;поездки</h3><img src="duty-4.webp" alt="Таблица подрядчиков, посадочный талон и бронь отеля" loading="lazy"></li>
+        <li class="task"><h3><i>📚</i>Собирает базы знаний и&nbsp;регламенты для&nbsp;команды</h3><img src="duty-5.webp" alt="База знаний команды в Notion" loading="lazy"></li>
+        </ul>
+
+    <div class="fit-row">
         <div class="fit">
           <h3>Подходит тебе</h3>
           <ul>
@@ -421,7 +424,7 @@
           </ul>
         </div>
       </div>
-    </div>
+
     <p class="p-final">И&nbsp;всё это ты будешь уметь, чтобы зарабатывать <span>от&nbsp;50 до&nbsp;150.000+&nbsp;₽</span></p>
   </div>
 </section>
