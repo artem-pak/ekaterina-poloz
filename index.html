@@ -35,7 +35,6 @@
     background:var(--grad);color:#fff;display:grid;place-items:center;transition:transform .2s ease}
   .notch-btn:hover{transform:translateX(-50%) translateY(2px)}
   .notch-btn svg{width:30px;height:30px;display:block}
-  body{padding-bottom:110px}
   .hero .wrap{max-width:960px}
   .hero-head,.cta{container-type:inline-size}
   .hero .wrap{display:flex;flex-direction:column}
@@ -99,6 +98,22 @@
     .facts{display:grid;grid-template-columns:auto auto;justify-content:start;gap:18px 44px}
     .stat-card b{font-size:clamp(30px,3.6vw,40px)}
   }
+
+  /* ---------- блок 2: почему выбирают программу ---------- */
+  .why{padding:92px 0 64px}
+  .why .wrap{max-width:1240px}
+  .why h2{font-size:clamp(30px,4.6vw,56px);line-height:1.04;font-weight:600;letter-spacing:-.045em;text-wrap:balance}
+  .why-grid{margin-top:28px;display:grid;grid-template-columns:1fr;gap:12px}
+  .why-card{border:1px solid #c9d2dc;border-radius:6px;background:#fff;padding:24px 22px 26px}
+  .why-card .n{display:block;font-size:15px;font-weight:600;letter-spacing:.04em;color:var(--muted)}
+  .why-card h3{margin-top:22px;font-size:clamp(21px,2.1vw,25px);line-height:1.2;font-weight:600;letter-spacing:-.03em}
+  .why-card p{margin-top:12px;font-size:clamp(16px,1.35vw,18px);line-height:1.5;color:var(--text);text-wrap:pretty}
+  .why-card b{font-weight:600;color:var(--ink)}
+  @media (min-width:760px){
+    .why{padding:112px 0 88px}
+    .why-grid{margin-top:40px;grid-template-columns:1fr 1fr;gap:16px}
+    .why-card{padding:30px 30px 32px}
+  }
 </style>
 </head>
 <body>
@@ -146,5 +161,33 @@
   </a>
 </div>
 </div>
+
+<section class="why" id="next">
+  <div class="wrap">
+    <h2>Почему выбирают мою программу</h2>
+    <div class="why-grid">
+      <article class="why-card">
+        <span class="n">01</span>
+        <h3>Учу тому, за что платят предприниматели</h3>
+        <p>Шесть лет я работаю ассистентом и&nbsp;руководила командой ассистентов, поэтому в&nbsp;программе <b>только задачи, которые реально дают на&nbsp;проектах</b>.</p>
+      </article>
+      <article class="why-card">
+        <span class="n">02</span>
+        <h3>Сопровождаю до&nbsp;первого проекта</h3>
+        <p>Резюме, портфолио, отклики и&nbsp;<b>мои разборы раз в&nbsp;две недели</b>, на&nbsp;которых я&nbsp;смотрю твою ситуацию и&nbsp;подсказываю, что поменять.</p>
+      </article>
+      <article class="why-card">
+        <span class="n">03</span>
+        <h3>Ты&nbsp;не&nbsp;теряешься в&nbsp;потоке</h3>
+        <p><b>По&nbsp;каждому заданию обратная связь</b>, а&nbsp;для вопросов отдельная тема в&nbsp;чате с&nbsp;моими голосовыми ответами.</p>
+      </article>
+      <article class="why-card">
+        <span class="n">04</span>
+        <h3>Заканчиваешь с&nbsp;готовым портфолио</h3>
+        <p>Все задания ты&nbsp;делаешь для&nbsp;одной сферы бизнеса, поэтому к&nbsp;4&#8209;й неделе у&nbsp;тебя <b>цельное портфолио по&nbsp;моему шаблону</b>.</p>
+      </article>
+    </div>
+  </div>
+</section>
 </body>
 </html>
