@@ -39,11 +39,13 @@
   .fact span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
   .fact b{display:block;margin-top:6px;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
 
-  /* место под фото Кати (под кнопкой) */
+  .intro{margin:18px auto 0;max-width:560px;text-align:center;font-size:clamp(15px,1.4vw,17px);line-height:1.45;color:var(--muted);text-wrap:balance}
+
+  /* фото Кати: вырезанное фото в светлой голубой рамке */
   .hero-photo{margin-top:32px}
-  .slot{aspect-ratio:4/5;border-radius:6px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
-    color:var(--muted);font-size:15px;line-height:1.4;background:#f4f7fa;border:1px solid #c9d2dc}
-  .slot b{display:block;font-size:19px;color:var(--ink);font-weight:600;margin-bottom:4px}
+  .photo-frame{position:relative;aspect-ratio:4/5;border-radius:6px;overflow:hidden;border:1px solid #c9d2dc;
+    background:linear-gradient(160deg,#e4eeff 0%,#dcf3fb 55%,#d8f7f1 100%)}
+  .photo-frame img{position:absolute;left:50%;bottom:0;transform:translateX(-50%);width:100%;height:auto;display:block}
 
   /* карточки с цифрами: тонкая рамка, лёгкая крупная цифра, стрелка; всегда две в одну строку */
   .stats{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -57,7 +59,8 @@
     .hero{padding:52px 0 56px}
     .btn{padding:24px 10px}
     .facts{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
-    .slot{aspect-ratio:16/10}
+    .photo-frame{aspect-ratio:16/9}
+    .photo-frame img{width:auto;height:100%}
     .stat{padding:28px 28px 26px}
     .stat b{font-size:min(56px,calc(((100cqi - 12px) / 2 - 56px) / 5.6))}
     .stat p{margin-top:26px;font-size:17px}
@@ -74,6 +77,7 @@
       <h1><span class="grad-text">AI</span> бизнес&#8209;ассистент</h1>
       <p class="lead">Освой профессию с&nbsp;нуля за&nbsp;6&nbsp;недель&nbsp;— с&nbsp;потенциалом дохода от&nbsp;150&nbsp;000&nbsp;₽ в&nbsp;месяц из&nbsp;дома</p>
       <div class="cta"><a class="btn" href="#consult">Записаться на&nbsp;карьерную консультацию</a></div>
+      <p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p>
 
       <div class="facts">
         <div class="fact"><span>Формат</span><b>Онлайн</b></div>
@@ -83,7 +87,7 @@
       </div>
 
       <div class="hero-photo">
-        <div class="slot" id="photo-slot"><div><b>Место под фото Кати</b>фото за&nbsp;работой вставим сюда</div></div>
+        <div class="photo-frame"><img src="katya.webp" width="1178" height="1335" alt="Катя Полоз"></div>
       </div>
 
       <div class="stats">
