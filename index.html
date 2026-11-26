@@ -225,7 +225,7 @@
   }
 
   /* ---------- блок 6: программа обучения (чёрный) ---------- */
-  .program{position:relative;background:#000;color:#fff;margin-top:-36px;padding:128px 0 96px}
+  .program{position:relative;z-index:1;background:#000;color:#fff;margin-top:-36px;padding:128px 0 96px;border-radius:0 0 36px 36px}
   .program .wrap{max-width:1240px}
   .program h2{font-size:clamp(36px,9.6vw,72px);line-height:1.02;font-weight:600;letter-spacing:-.05em;text-wrap:balance;max-width:980px}
   .p-stats{margin-top:34px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
@@ -254,9 +254,10 @@
     .step>h3{margin-top:14px}
     .step>.only{justify-self:start}
   }
-  .p-final{margin:72px auto 0;max-width:980px;text-align:center;font-size:clamp(30px,8vw,64px);line-height:1.06;font-weight:600;letter-spacing:-.045em;text-wrap:balance}
+  .earn{margin-top:-36px;padding:132px 0 96px;background:#eee;color:var(--ink)}
+  .p-final{margin:0 auto;max-width:980px;text-align:center;font-size:clamp(30px,8vw,64px);line-height:1.06;font-weight:600;letter-spacing:-.045em;text-wrap:balance}
   .p-final span{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-  @media (min-width:960px){.p-final{margin-top:104px}}
+  @media (min-width:960px){.earn{padding:170px 0 130px}}
 </style>
 </head>
 <body>
@@ -346,7 +347,7 @@
     <ol class="author-list">
       <li><b class="g">6&nbsp;лет</b> работаю бизнес&#8209;ассистентом удалённо, в&nbsp;офисе за&nbsp;всю жизнь проработала не&nbsp;больше месяца</li>
       <li>Руководила командой ассистентов, потом отделом обучения и&nbsp;два года учила новых сотрудников</li>
-      <li>Работаю на&nbsp;себя, зарабатываю <b class="g">200–250&nbsp;тыс. в&nbsp;месяц</b> при&nbsp;<span class="nw">5–6&nbsp;часах</span> работы в&nbsp;день из&nbsp;дома</li>
+      <li>Работаю на&nbsp;себя, зарабатываю <b class="g">200-250&nbsp;тыс. в&nbsp;месяц</b> при&nbsp;<span class="nw">5-6&nbsp;часах</span> работы в&nbsp;день из&nbsp;дома</li>
       <li>Строила систему мотивации для&nbsp;сети клиник на&nbsp;<b class="g">200&nbsp;сотрудников</b></li>
     </ol>
   </div>
@@ -361,13 +362,13 @@
         <div class="num-top"><span class="lvl">Уровень 1</span><span class="bars" aria-hidden="true"><s></s><s></s><s></s></span></div>
         <h3>Начинающий ассистент</h3>
         <b>50&nbsp;тыс.&nbsp;₽ за&nbsp;один&nbsp;проект</b>
-        <p>На&nbsp;3–4&nbsp;часа в&nbsp;день</p>
+        <p>На&nbsp;3-4&nbsp;часа в&nbsp;день</p>
       </div>
       <div class="num" data-n="2">
         <div class="num-top"><span class="lvl">Уровень 2</span><span class="bars" aria-hidden="true"><s></s><s></s><s></s></span></div>
         <h3>Ассистент с&nbsp;опытом полгода или год</h3>
         <b>80&nbsp;тыс.&nbsp;₽ за&nbsp;один&nbsp;проект</b>
-        <p>А&nbsp;с&nbsp;двумя-тремя проектами <span class="nw">140–200&nbsp;тыс.&nbsp;₽</span></p>
+        <p>А&nbsp;с&nbsp;двумя-тремя проектами <span class="nw">140-200&nbsp;тыс.&nbsp;₽</span></p>
       </div>
       <div class="num top" data-n="3">
         <div class="num-top"><span class="lvl">Уровень 3</span><span class="bars" aria-hidden="true"><s></s><s></s><s></s></span></div>
@@ -381,7 +382,7 @@
     <div class="reasons">
       <div class="reason"><h3>Удалёнка</h3><p>Работаешь из&nbsp;дома или из&nbsp;любой точки мира, в&nbsp;своём ритме.</p></div>
       <div class="reason"><h3>Низкий порог входа</h3><p>Не&nbsp;нужны код, дизайн и&nbsp;английский, а&nbsp;опыт администратора или менеджера пригодится с&nbsp;первого дня.</p></div>
-      <div class="reason"><h3>3–4&nbsp;часа в&nbsp;день</h3><p>Один проект занимает полдня, его можно совмещать с&nbsp;декретом или основной работой.</p></div>
+      <div class="reason"><h3>3-4&nbsp;часа в&nbsp;день</h3><p>Один проект занимает полдня, его можно совмещать с&nbsp;декретом или основной работой.</p></div>
       <div class="reason"><h3>Спрос</h3><p>Малый бизнес тонет в&nbsp;мелких задачах, и&nbsp;предпринимателю нужен человек, который снимет с&nbsp;него рутину.</p></div>
       <div class="reason"><h3>Карьера</h3><p>От&nbsp;ассистента на&nbsp;одном проекте до&nbsp;координатора, который выстраивает процессы во&nbsp;всём бизнесе.</p></div>
       <div class="reason"><h3>ИИ</h3><p>Нейросети делают черновую работу, а&nbsp;решения и&nbsp;ответственность остаются за&nbsp;тобой, поэтому ты&nbsp;успеваешь больше.</p></div>
@@ -443,11 +444,11 @@
       <article class="step"><p class="when">Неделя 3</p><h3>Команда, подрядчики и&nbsp;поездки</h3><p>Берёшь на&nbsp;себя подрядчиков, встречи и&nbsp;поездки и&nbsp;собираешь базу знаний для&nbsp;команды.</p></article>
       <article class="step"><p class="when">Конец 3-й недели</p><h3>Мастер-майнд по&nbsp;нейросетям</h3><p>Отдаёшь нейросетям черновую работу и&nbsp;делаешь те&nbsp;же задачи быстрее.</p></article>
       <article class="step"><p class="when">Неделя 4</p><h3>Резюме и&nbsp;портфолио</h3><p>Резюме и&nbsp;портфолио, с&nbsp;которыми зовут на&nbsp;собеседования.</p></article>
-      <article class="step"><p class="when">Недели 5–6</p><h3>Поиск проекта</h3><p>Первые собеседования с&nbsp;предпринимателями и&nbsp;именной сертификат.</p></article>
-      <article class="step coord"><p class="when">Недели 4–6</p><span class="only">Только координатор</span><h3>Бизнес-координатор</h3><p>Аудит реального бизнеса в&nbsp;портфолио и&nbsp;выход на&nbsp;проекты координатора за&nbsp;50–150&nbsp;тыс.</p></article>
+      <article class="step"><p class="when">Недели 5-6</p><h3>Поиск проекта</h3><p>Первые собеседования с&nbsp;предпринимателями и&nbsp;именной сертификат.</p></article>
+      <article class="step coord"><p class="when">Недели 4-6</p><span class="only">Только координатор</span><h3>Бизнес-координатор</h3><p>Аудит реального бизнеса в&nbsp;портфолио и&nbsp;выход на&nbsp;проекты координатора за&nbsp;50-150&nbsp;тыс.</p></article>
     </div>
-    <p class="p-final">И&nbsp;всё это ты будешь уметь, чтобы зарабатывать <span>от&nbsp;50 до&nbsp;150.000+&nbsp;₽</span></p>
     </div>
 </section>
+<section class="earn"><div class="wrap"><p class="p-final">И&nbsp;всё это ты будешь уметь, чтобы зарабатывать <span>от&nbsp;50 до&nbsp;150.000+&nbsp;₽</span></p></div></section>
 </body>
 </html>
