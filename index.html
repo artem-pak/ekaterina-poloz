@@ -339,6 +339,50 @@
     .sup-grid .bonus:nth-child(n+4){grid-column:span 3}
     .support .prof-cta{margin-top:64px}
   }
+
+  /* ---------- блоки 9-13: форматы, кейсы, консультация, вопросы, подвал ---------- */
+  .support{z-index:1;border-radius:0 0 36px 36px}
+  .formats,.consult{position:relative;z-index:1;background:#000;color:#fff;margin-top:-36px;padding:128px 0 80px;border-radius:0 0 36px 36px}
+  .cases{position:relative;z-index:1;background:#eee;color:var(--ink);margin-top:-36px;padding:128px 0 80px;border-radius:0 0 36px 36px}
+  .faq{position:relative;z-index:1;background:#eee;color:var(--ink);margin-top:-36px;padding:128px 0 80px;border-radius:0 0 36px 36px}
+  .formats .wrap,.cases .wrap,.consult .wrap,.faq .wrap,.foot .wrap{max-width:1240px}
+  .formats h2,.cases h2,.consult h2,.faq h2{font-size:clamp(34px,9.4vw,68px);line-height:1.04;font-weight:600;letter-spacing:-.05em;text-wrap:balance;max-width:960px}
+  .fmt-grid{margin-top:34px;display:grid;gap:12px}
+  .fmt{display:flex;flex-direction:column;border-radius:30px;background:#fff;color:var(--ink);padding:28px 24px 26px}
+  .fmt h3{font-size:clamp(23px,2.3vw,30px);line-height:1.12;font-weight:600;letter-spacing:-.035em;text-wrap:balance}
+  .fmt-term{margin-top:12px;display:inline-block;align-self:flex-start;padding:7px 14px;border-radius:999px;background:#000;color:#fff;font-size:14px;font-weight:600}
+  .fmt p:not(.fmt-term){margin-top:16px;font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:#4a4a4a;text-wrap:pretty}
+  .fmt-btn{margin-top:auto;padding-top:26px}
+  .fmt .btn{display:block;width:100%;font-size:15px;padding:18px 20px;text-align:center}
+  .case-grid{margin-top:34px;display:grid;gap:12px}
+  .case{min-height:120px;display:grid;place-items:center;text-align:center;padding:24px;border-radius:30px;background:transparent;border:2px dashed #c3c8d0;color:#8a93a1;font-size:clamp(16px,1.4vw,19px);line-height:1.4}
+  .case-note{margin-top:20px;font-size:15px;color:#5d6674}
+  .steps3{list-style:none;margin-top:34px;display:grid;gap:12px}
+  .steps3 li{border-radius:30px;background:#fff;color:var(--ink);padding:26px 24px 30px}
+  .steps3 b{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:#000;color:#fff;font-size:20px;font-weight:700}
+  .steps3 p{margin-top:16px;font-size:clamp(17px,1.5vw,20px);line-height:1.45;font-weight:500;text-wrap:pretty}
+  .consult .prof-cta{margin-top:48px}
+  .faq-list{margin-top:34px;display:grid;gap:10px;max-width:960px}
+  .faq-list details{border-radius:24px;background:#fff;padding:0 24px}
+  .faq-list summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:22px 0;font-size:clamp(18px,1.6vw,21px);line-height:1.3;font-weight:600;letter-spacing:-.02em}
+  .faq-list summary::-webkit-details-marker{display:none}
+  .faq-list summary::after{content:"";flex:none;width:28px;height:28px;border-radius:50%;background:#000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.4' stroke-linecap='round'%3E%3Cpath d='M12 6v12M6 12h12'/%3E%3C/svg%3E") center/14px no-repeat;transition:transform .2s}
+  .faq-list details[open] summary::after{transform:rotate(45deg)}
+  .faq-list details p{padding:0 0 24px;font-size:clamp(16px,1.35vw,18px);line-height:1.55;color:#4a4a4a;text-wrap:pretty}
+  .foot{position:relative;background:#000;color:#9aa3b2;margin-top:-36px;padding:84px 0 40px;font-size:14px;line-height:1.5}
+  .foot .wrap{display:flex;flex-direction:column;gap:10px}
+  .foot-links{display:flex;flex-wrap:wrap;gap:6px 20px}
+  @media (min-width:960px){
+    .formats,.consult,.cases,.faq{padding:160px 0 110px}
+    .fmt-grid{margin-top:48px;grid-template-columns:1fr 1fr;gap:16px}
+    .fmt{border-radius:34px;padding:38px 38px 36px}
+    .case-grid{margin-top:48px;grid-template-columns:repeat(3,1fr);gap:16px}
+    .steps3{margin-top:48px;grid-template-columns:repeat(3,1fr);gap:16px}
+    .steps3 li{border-radius:34px;padding:32px 30px 38px}
+    .consult .prof-cta{margin-top:64px}
+    .faq-list{margin-top:48px}
+    .foot .wrap{flex-direction:row;justify-content:space-between}
+  }
 </style>
 </head>
 <body>
@@ -578,5 +622,56 @@
     <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a><p class="intro">Расскажем, как конкретно тебе стать AI&nbsp;бизнес&#8209;ассистентом, а&nbsp;также раскроем нашу методику, как мы сопровождаем учеников до&nbsp;первой зарплаты</p></div></div>
   </div>
 </section>
+<section class="formats" id="formats">
+  <div class="wrap">
+    <h2>Два формата сопровождения</h2>
+    <div class="fmt-grid">
+      <article class="fmt"><h3>Сопровождение бизнес&#8209;ассистента</h3><p class="fmt-term">6&nbsp;недель</p><p>Профессия, резюме, портфолио и&nbsp;первые собеседования на&nbsp;проекты за&nbsp;30-50&nbsp;тыс. в&nbsp;месяц.</p><div class="fmt-btn"><a class="btn" href="#consult">Записаться на&nbsp;консультацию</a></div></article>
+      <article class="fmt"><h3>Сопровождение до&nbsp;бизнес&#8209;координатора</h3><p class="fmt-term">9&nbsp;недель</p><p>Всё то&nbsp;же и&nbsp;аудит реального бизнеса в&nbsp;портфолио, с&nbsp;ним ты&nbsp;выходишь на&nbsp;проекты за&nbsp;50-150&nbsp;тыс. в&nbsp;месяц.</p><div class="fmt-btn"><a class="btn" href="#consult">Записаться на&nbsp;консультацию</a></div></article>
+    </div>
+  </div>
+</section>
+
+<section class="cases" id="cases">
+  <div class="wrap">
+    <h2>Они тоже начинали с&nbsp;другой профессии</h2>
+    <div class="case-grid">
+      <div class="case"><p>Имя, прошлая профессия&nbsp;&rarr; бизнес&#8209;ассистент, доход</p></div>
+      <div class="case"><p>Имя, прошлая профессия&nbsp;&rarr; бизнес&#8209;ассистент, доход</p></div>
+      <div class="case"><p>Имя, прошлая профессия&nbsp;&rarr; бизнес&#8209;ассистент, доход</p></div>
+    </div>
+    <p class="case-note">Результаты и&nbsp;сроки у&nbsp;каждой свои.</p>
+  </div>
+</section>
+
+<section class="consult" id="consult">
+  <div class="wrap">
+    <h2>Разберём твою ситуацию на&nbsp;карьерной консультации</h2>
+    <ol class="steps3">
+      <li><b>1</b><p>Оставляешь заявку на&nbsp;сайте</p></li>
+      <li><b>2</b><p>Согласовываем удобное время, можно вечером или в&nbsp;выходной</p></li>
+      <li><b>3</b><p>На&nbsp;созвоне разбираем твой опыт, вакансии и&nbsp;сколько ты&nbsp;сможешь зарабатывать</p></li>
+    </ol>
+    <div class="prof-cta"><div class="cta-in"><a class="btn" href="#consult">Записаться на&nbsp;карьерную <br class="m-br">консультацию</a></div></div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <h2>Отвечаем на&nbsp;частые вопросы</h2>
+    <div class="faq-list">
+      <details><summary>Сколько стоит?</summary><p>Стоимость я называю на&nbsp;консультации, она зависит от&nbsp;формата сопровождения.</p></details>
+      <details><summary>Я никогда не работала с&nbsp;нейросетями, справлюсь?</summary><p>Справишься. На&nbsp;мастер-майнде мы с&nbsp;нуля настраиваем нейросети и&nbsp;разбираем, какую часть каждой задачи можно им отдать.</p></details>
+      <details><summary>Есть гарантия, что я найду работу?</summary><p>Гарантии трудоустройства я не&nbsp;даю. Я даю систему поиска на&nbsp;hh.ru, в&nbsp;Telegram и&nbsp;через базу предпринимателей, а&nbsp;на&nbsp;разборах смотрю твою ситуацию и&nbsp;подсказываю, что поменять.</p></details>
+      <details><summary>Что даёт сертификат?</summary><p>Его получают те, кто сдал экзамен-кейс «Неделя ассистента». Сертификат добавляешь в&nbsp;резюме на&nbsp;hh.ru и&nbsp;в&nbsp;портфолио, и&nbsp;предприниматель видит, что ты&nbsp;прошла обучение до&nbsp;конца.</p></details>
+      <details><summary>Нужно ли платить за&nbsp;сервисы?</summary><p>Для поиска через базу предпринимателей понадобится подписка на&nbsp;ChatGPT, это около 20&nbsp;$ в&nbsp;месяц.</p></details>
+    </div>
+  </div>
+</section>
+
+<footer class="foot"><div class="wrap">
+  <p>AI бизнес&#8209;ассистент, Екатерина Полоз</p>
+  <p class="foot-links"><span>Оферта</span><span>Политика конфиденциальности</span><span>Согласие на&nbsp;обработку данных</span></p>
+</div></footer>
 </body>
 </html>
