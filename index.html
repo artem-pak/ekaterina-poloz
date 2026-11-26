@@ -109,7 +109,7 @@
 
   /* ---------- блок 2: почему выбирают программу (серый фон, большие скругления) ---------- */
   /* серый фон заходит под скруглённый низ первого экрана, поэтому за вырезом и углами тоже серый */
-  .why{position:relative;background:#eee;color:var(--ink);margin-top:-44px;padding:140px 0 72px}
+  .why{position:relative;z-index:1;background:#eee;color:var(--ink);margin-top:-44px;padding:140px 0 72px;border-radius:0 0 36px 36px}
   .why .wrap{max-width:1240px}
   .why h2{font-size:clamp(40px,11vw,76px);line-height:1.02;font-weight:600;letter-spacing:-.045em;text-wrap:balance;color:var(--ink)}
   .why-grid{margin-top:30px;display:grid;grid-template-columns:1fr;gap:12px}
@@ -122,6 +122,37 @@
     .why{padding:150px 0 96px}
     .why-grid{margin-top:44px;grid-template-columns:1fr 1fr;gap:16px}
     .why-card{border-radius:34px;padding:38px 38px 42px}
+  }
+
+  /* ---------- блок 3: автор программы (чёрный фон) ---------- */
+  /* чёрный блок заходит под скруглённый низ серого блока */
+  .author{position:relative;background:#000;color:#fff;margin-top:-36px;padding:112px 0 0;overflow:hidden}
+  .author .wrap{max-width:1240px;display:flex;flex-direction:column}
+  .author-label{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#8b93a1}
+  .author h2{margin-top:14px;font-size:clamp(46px,13vw,104px);line-height:.98;font-weight:600;letter-spacing:-.055em}
+  .author-sub{margin-top:18px;max-width:520px;font-size:clamp(18px,1.7vw,22px);line-height:1.4;color:#b9c0cc;text-wrap:pretty}
+  .nw{white-space:nowrap}
+  .g{white-space:nowrap;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+
+  .author-photo{position:relative;margin:26px -16px 0;order:2}
+  .author-photo::before{content:"";position:absolute;left:50%;top:6%;width:96%;aspect-ratio:1;transform:translateX(-50%);border-radius:50%;
+    background:radial-gradient(circle,rgba(45,107,255,.85) 0%,rgba(24,168,255,.6) 36%,rgba(18,214,196,.38) 56%,rgba(0,0,0,0) 72%);filter:blur(8px)}
+  .author-photo img{position:relative;display:block;width:78%;height:auto;margin:0 auto;
+    -webkit-mask-image:linear-gradient(#000 74%,transparent);mask-image:linear-gradient(#000 74%,transparent)}
+
+  .author-list{order:3;margin-top:8px;padding:0 0 72px;list-style:none;counter-reset:a}
+  .author-list li{counter-increment:a;position:relative;padding:22px 0 22px 44px;border-top:1px solid #2a2d33;font-size:clamp(17px,1.5vw,20px);line-height:1.45;color:#e6e9ee}
+  .author-list li::before{content:counter(a);position:absolute;left:0;top:23px;font-size:15px;font-weight:600;color:#6f7787}
+  .author-list li:last-child{border-bottom:1px solid #2a2d33}
+
+  @media (min-width:960px){
+    .author{padding:150px 0 0}
+    .author .wrap{display:grid;grid-template-columns:minmax(0,1fr) clamp(420px,42vw,540px);column-gap:56px;align-items:start}
+    .author-head{grid-column:1;grid-row:1}
+    .author-list{grid-column:1;grid-row:2;margin-top:36px;padding-bottom:96px}
+    .author-photo{grid-column:2;grid-row:1 / span 2;align-self:end;margin:0}
+    .author-photo img{width:100%;-webkit-mask-image:none;mask-image:none}
+    .author-photo::before{top:2%;width:110%}
   }
 </style>
 </head>
@@ -196,6 +227,26 @@
         <p>Все задания ты&nbsp;делаешь для&nbsp;одной сферы бизнеса, поэтому к&nbsp;4&#8209;й неделе у&nbsp;тебя <b>цельное портфолио по&nbsp;моему шаблону</b>.</p>
       </article>
     </div>
+  </div>
+</section>
+
+<section class="author" id="author">
+  <div class="wrap">
+    <div class="author-head">
+      <p class="author-label">Автор программы</p>
+      <h2>Катя Полоз</h2>
+      <p class="author-sub">Бизнес-ассистент и&nbsp;бизнес-координатор, работаю удалённо с&nbsp;первого дня.</p>
+    </div>
+
+    <div class="author-photo"><img src="katya-cut.webp" width="900" height="1020" alt="Катя Полоз" loading="lazy"></div>
+
+    <ol class="author-list">
+      <li><b class="g">6&nbsp;лет</b> работаю бизнес&#8209;ассистентом удалённо, в&nbsp;офисе за&nbsp;всю жизнь проработала не&nbsp;больше месяца</li>
+      <li>Руководила командой ассистентов, потом отделом обучения и&nbsp;два года учила новых сотрудников</li>
+      <li>Работая на&nbsp;себя, зарабатывала <b class="g">200–250&nbsp;тыс. в&nbsp;месяц</b> при&nbsp;<span class="nw">5–6&nbsp;часах</span> работы в&nbsp;день</li>
+      <li>Строила систему мотивации для&nbsp;сети клиник на&nbsp;<b class="g">200&nbsp;сотрудников</b></li>
+      <li>Сейчас я&nbsp;в&nbsp;декрете и&nbsp;веду проекты за&nbsp;<b class="g">80–100&nbsp;тыс. в&nbsp;месяц</b> на&nbsp;<span class="nw">3–4&nbsp;часа</span> в&nbsp;день</li>
+    </ol>
   </div>
 </section>
 </body>
