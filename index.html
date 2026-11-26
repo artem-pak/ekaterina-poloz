@@ -11,10 +11,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --bg:#eef1f4;--ink:#0b0b0b;--text:#4a4a4a;
+    --bg:#e9eef3;--ink:#0b0b0b;--text:#3a4150;--muted:#6b7482;--line:#e1e8ef;--card:#f3f6fa;
     --blue:#2d6bff;--sky:#18a8ff;--teal:#12d6c4;
     --grad:linear-gradient(90deg,#2d6bff 0%,#18a8ff 52%,#12d6c4 100%);
-    --accent-ink:#0a63d6;
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html{background:var(--bg);scroll-behavior:smooth}
@@ -23,43 +22,44 @@
   .wrap{max-width:1200px;margin:0 auto;padding:0 16px}
   .grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 
-  /* ---------- первый экран ---------- */
-  .hero{background:#000;color:#fff;border-radius:0 0 32px 32px;padding:20px 0 28px;overflow:hidden}
-  .pills{display:flex;flex-wrap:wrap;gap:8px}
-  .pill{background:#1c1c1e;border-radius:999px;padding:9px 15px;font-size:13px;line-height:1.25;color:rgba(255,255,255,.62);white-space:nowrap}
-  .pill b{margin-left:3px;font-weight:600;color:#fff}
+  /* ---------- первый экран (светлый) ---------- */
+  .hero{background:#fff;border-radius:0 0 32px 32px;padding:32px 0 28px;overflow:hidden}
+  .hero-text{container-type:inline-size}
 
-  .kicker{margin-top:30px;font-size:clamp(16px,1.5vw,19px);color:rgba(255,255,255,.7)}
-  h1{margin-top:10px;font-size:clamp(36px,10.8vw,84px);white-space:nowrap;line-height:.98;font-weight:600;letter-spacing:-.055em}
-  .lead{margin-top:20px;max-width:620px;font-size:clamp(18px,1.7vw,23px);line-height:1.38;color:rgba(255,255,255,.78);text-wrap:pretty}
+  .kicker{font-size:clamp(16px,1.5vw,19px);color:var(--muted)}
+  /* заголовок и кнопка всегда в одну строку: размер считается от ширины колонки */
+  h1{margin-top:12px;white-space:nowrap;font-size:min(80px,calc(100cqi / 8.8));line-height:1;font-weight:600;letter-spacing:-.055em}
+  .lead{margin-top:20px;max-width:620px;font-size:clamp(18px,1.7vw,23px);line-height:1.38;color:var(--text);text-wrap:pretty}
   .cta{margin-top:28px}
-  .btn{display:inline-block;width:100%;text-align:center;text-decoration:none;font-weight:700;font-size:17px;letter-spacing:.02em;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:20px;padding:22px 24px;transition:filter .15s,transform .15s}
-  .btn:hover{filter:brightness(1.07)} .btn:active{transform:scale(.99)}
-  .note{margin-top:12px;font-size:13px;line-height:1.45;color:rgba(255,255,255,.55)}
+  .btn{display:block;width:100%;white-space:nowrap;text-align:center;text-decoration:none;font-weight:700;font-size:min(18px,calc((100cqi - 24px) / 23.9));letter-spacing:0;text-transform:uppercase;color:#fff;background:var(--grad);border-radius:20px;padding:22px 10px;transition:filter .15s,transform .15s}
+  .btn:hover{filter:brightness(1.06)} .btn:active{transform:scale(.99)}
 
-  .stats{margin-top:26px;display:grid;gap:10px}
-  .stat{border-radius:22px;background:#111317;border:1px solid rgba(255,255,255,.09);padding:18px 20px}
+  .facts{margin-top:30px;display:grid;grid-template-columns:1fr 1fr;gap:20px 16px}
+  .fact span{display:block;font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .fact b{display:block;margin-top:6px;font-size:19px;font-weight:500;letter-spacing:-.01em;color:var(--ink);white-space:nowrap}
+
+  .stats{margin-top:30px;display:grid;gap:10px}
+  .stat{border-radius:22px;background:var(--card);border:1px solid var(--line);padding:18px 20px}
   .stat b{display:block;font-size:clamp(34px,4.4vw,48px);line-height:1;font-weight:700;letter-spacing:-.05em}
-  .stat p{margin-top:8px;font-size:15px;line-height:1.35;color:rgba(255,255,255,.8)}
-  .stat span{display:block;margin-top:2px;font-size:14px;line-height:1.35;color:rgba(255,255,255,.5)}
+  .stat p{margin-top:8px;font-size:15px;line-height:1.35;color:var(--ink)}
+  .stat span{display:block;margin-top:2px;font-size:14px;line-height:1.35;color:var(--muted)}
 
   /* место под фото Кати (потом вставим вырезанное фото) */
   .hero-photo{margin-top:24px;position:relative}
-  .slot{position:relative;aspect-ratio:4/5;border-radius:28px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
-    color:rgba(255,255,255,.55);font-size:15px;line-height:1.4;
-    background:linear-gradient(180deg,rgba(45,107,255,.14),rgba(18,214,196,.10));
-    border:1.5px dashed rgba(24,168,255,.55)}
-  .slot b{display:block;font-size:19px;color:#fff;font-weight:600;margin-bottom:4px}
+  .slot{aspect-ratio:4/5;border-radius:28px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;
+    color:var(--muted);font-size:15px;line-height:1.4;
+    background:linear-gradient(180deg,rgba(45,107,255,.08),rgba(18,214,196,.10));
+    border:1.5px dashed rgba(45,107,255,.45)}
+  .slot b{display:block;font-size:19px;color:var(--ink);font-weight:600;margin-bottom:4px}
 
   @media (min-width:960px){
-    .hero{padding:28px 0 0}
-    .pill{font-size:15px;padding:12px 20px}
-    .hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);grid-template-rows:auto 1fr;column-gap:48px;min-height:720px}
-    .pills-row{grid-column:1 / -1;grid-row:1}
-    .hero-text{grid-column:1;grid-row:2;padding-bottom:48px;align-self:start}
-    .btn{width:auto;padding:24px 44px;font-size:18px}
-    .stats{grid-template-columns:1fr 1fr;max-width:640px}
-    .hero-photo{margin:0;grid-column:2;grid-row:2;align-self:stretch;display:flex;align-items:flex-end;padding-top:24px}
+    .hero{padding:48px 0 0}
+    .hero .wrap{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);column-gap:48px;min-height:700px}
+    .hero-text{grid-column:1;padding-bottom:48px;align-self:start}
+    .btn{display:block;padding:24px 12px}
+    .facts{grid-template-columns:repeat(4,auto);justify-content:space-between;gap:16px}
+    .stats{grid-template-columns:1fr 1fr}
+    .hero-photo{margin:0;grid-column:2;align-self:stretch;display:flex;align-items:flex-end}
     .slot{aspect-ratio:auto;width:100%;height:100%;min-height:520px;border-radius:28px 28px 0 0;border-bottom:0}
   }
 </style>
@@ -67,26 +67,23 @@
 <body>
 <header class="hero">
   <div class="wrap">
-    <div class="pills-row">
-      <div class="pills">
-        <div class="pill">Формат:<b>онлайн</b></div>
-        <div class="pill">Длительность:<b>6&nbsp;недель</b></div>
-        <div class="pill">Старт потока:<b>17&nbsp;января</b></div>
-        <div class="pill"><b style="margin:0">Лично от&nbsp;Кати</b></div>
-      </div>
-    </div>
-
     <div class="hero-text">
       <p class="kicker">Авторское сопровождение Кати&nbsp;Полоз</p>
-      <h1><span class="grad-text">AI</span><br>бизнес‑ассистент</h1>
+      <h1><span class="grad-text">AI</span> бизнес&#8209;ассистент</h1>
       <p class="lead">Освой профессию с&nbsp;нуля за&nbsp;6&nbsp;недель&nbsp;— с&nbsp;потенциалом дохода от&nbsp;150&nbsp;000&nbsp;₽ в&nbsp;месяц из&nbsp;дома</p>
       <div class="cta"><a class="btn" href="#consult">Записаться на&nbsp;карьерную консультацию</a></div>
+
+      <div class="facts">
+        <div class="fact"><span>Формат</span><b>Онлайн</b></div>
+        <div class="fact"><span>Продолжительность</span><b>6&nbsp;недель</b></div>
+        <div class="fact"><span>Старт потока</span><b>17&nbsp;января</b></div>
+        <div class="fact"><span>Сопровождение</span><b>лично от&nbsp;Кати</b></div>
+      </div>
 
       <div class="stats">
         <div class="stat"><b class="grad-text">от&nbsp;150к&nbsp;₽</b><p>ориентир дохода ассистента</p><span>с&nbsp;двумя проектами или в&nbsp;координаторах</span></div>
         <div class="stat"><b class="grad-text">6&nbsp;лет</b><p>мой опыт бизнес-ассистента</p><span>на&nbsp;удалёнке, в&nbsp;офисе не&nbsp;больше месяца</span></div>
       </div>
-      <p class="note">Суммы&nbsp;— ориентир по&nbsp;опыту автора и&nbsp;коллег, а&nbsp;не&nbsp;гарантия дохода. Результат зависит от&nbsp;твоих действий.</p>
     </div>
 
     <div class="hero-photo">
