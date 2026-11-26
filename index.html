@@ -212,6 +212,10 @@
   .task{border-radius:30px;background:#fff;padding:22px 22px 22px;display:flex;flex-direction:column;gap:18px}
   .task h3{display:flex;align-items:center;gap:14px;font-size:clamp(19px,1.7vw,23px);line-height:1.25;font-weight:600;letter-spacing:-.025em}
   .task h3 i{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:14px;background:#f1f4f8;font-style:normal;font-size:23px}
+  .task-ai{background:var(--grad);color:#fff}
+  .task-ai h3 i{background:rgba(255,255,255,.22)}
+  .task-ai h3{font-size:clamp(24px,2.6vw,36px);letter-spacing:-.035em}
+  .ai-text{display:grid;gap:14px;font-size:clamp(16px,1.35vw,19px);line-height:1.5;color:#fff;text-wrap:pretty}
   .task img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:top left;border-radius:20px;margin-top:auto;border:1px solid #e6e9ee}
   .fit-row{margin-top:12px;display:grid;gap:12px}
   .fit{border-radius:30px;padding:26px 26px 28px;background:#fff}
@@ -228,6 +232,7 @@
     .task{border-radius:34px;padding:28px 28px 28px}
     .task:nth-child(5){grid-column:1/-1}
     .task:nth-child(5) img{aspect-ratio:21/9}
+    .task-ai{grid-column:1/-1;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);column-gap:56px;align-items:center;padding:40px 44px}
     .fit-row{margin-top:16px;grid-template-columns:1fr 1fr;gap:16px}
     .fit{border-radius:34px;padding:32px 32px 34px}
   }
@@ -412,7 +417,8 @@
         <li class="task"><h3><i>📊</i>Готовит документы, отчёты и&nbsp;презентации</h3><img src="duty-3.webp" alt="Отчёт, презентация и дашборд" loading="lazy"></li>
         <li class="task"><h3><i>✈️</i>Ищет подрядчиков, организует встречи и&nbsp;поездки</h3><img src="duty-4.webp" alt="Таблица подрядчиков, посадочный талон и бронь отеля" loading="lazy"></li>
         <li class="task"><h3><i>📚</i>Собирает базы знаний и&nbsp;регламенты для&nbsp;команды</h3><img src="duty-5.webp" alt="База знаний команды в Notion" loading="lazy"></li>
-        </ul>
+        <li class="task task-ai"><h3><i>🤖</i>Работает с&nbsp;искусственным интеллектом</h3><div class="ai-text"><p>Благодаря доступности и&nbsp;простоте искусственного интеллекта в&nbsp;наше время многие задачи, на&nbsp;которые раньше уходило по&nbsp;несколько часов, можно выполнять за&nbsp;15-20&nbsp;минут.</p><p>Нужно всего лишь один раз разобраться и&nbsp;правильно надиктовывать задачи нейросети. По&nbsp;сути, у&nbsp;тебя будет твой карманный сотрудник, который выполняет все самые сложные и&nbsp;рутинные задачи.</p></div></li>
+      </ul>
 
     <p class="p-final">И&nbsp;всё это ты будешь уметь, чтобы зарабатывать <span>от&nbsp;50 до&nbsp;150.000+&nbsp;₽</span></p>
     <div class="fit-row">
